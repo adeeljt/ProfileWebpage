@@ -15,15 +15,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- ===== SEO ===== -->
-  <title>Dr. Adeel Arif — Assistant Professor, Computer Science (AI &amp; Robotics)</title>
-  <meta name="description" content="Dr. Adeel Arif is an Assistant Professor of Computer Science at the University of Central Punjab, working on robotics, machine learning, and data-centric AI. Founder of the LahoriBot research group.">
+  <title>Dr. Adeel Arif — Assistant Professor, Robotics &amp; Computer Vision</title>
+  <meta name="description" content="Dr. Adeel Arif is an Assistant Professor in the Faculty of Information Technology and Director Graduate Programs at the University of Central Punjab, Lahore. PhD (SJTU) in vision-based control and autonomous quadrotor landing.">
   <meta name="author" content="Adeel Arif">
   <link rel="canonical" href="https://[your-domain].com/"> <!-- PLACEHOLDER: your site URL -->
 
   <!-- Open Graph / social sharing -->
   <meta property="og:type" content="profile">
-  <meta property="og:title" content="Dr. Adeel Arif — Assistant Professor, Computer Science">
-  <meta property="og:description" content="Robotics, machine learning, and data-centric AI. Research, projects, teaching, and consulting.">
+  <meta property="og:title" content="Dr. Adeel Arif — Assistant Professor, Robotics &amp; Computer Vision">
+  <meta property="og:description" content="Aerial robotics, visual servoing, and robot navigation. Research, projects, teaching, and consulting.">
   <meta property="og:url" content="https://[your-domain].com/"> <!-- PLACEHOLDER -->
   <meta property="og:image" content="https://[your-domain].com/adeel.jpg"> <!-- PLACEHOLDER: absolute URL to headshot -->
   <meta property="profile:first_name" content="Adeel">
@@ -37,12 +37,21 @@
     "@type": "Person",
     "name": "Adeel Arif",
     "honorificPrefix": "Dr.",
-    "jobTitle": "Assistant Professor of Computer Science",
+    "jobTitle": "Assistant Professor, Faculty of Information Technology; Director Graduate Programs",
     "worksFor": { "@type": "CollegeOrUniversity", "name": "University of Central Punjab" },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "Shanghai Jiao Tong University" },
+      { "@type": "CollegeOrUniversity", "name": "Government College University Lahore" },
+      { "@type": "CollegeOrUniversity", "name": "University of Central Punjab" }
+    ],
+    "memberOf": [
+      { "@type": "Organization", "name": "IEEE" },
+      { "@type": "Organization", "name": "Pakistan Engineering Council" }
+    ],
     "email": "mailto:adeel.arif@ucp.edu.pk",
     "image": "https://[your-domain].com/adeel.jpg",
     "url": "https://[your-domain].com/",
-    "knowsAbout": ["Robotics", "Machine Learning", "Data-centric AI", "Computer Vision", "AI Education"],
+    "knowsAbout": ["Aerial Robotics", "Visual Servoing", "Vision-based Control", "Autonomous Quadrotor Landing", "Robot Navigation", "Computer Vision", "Machine Learning"],
     "sameAs": [
       "https://scholar.google.com/citations?user=[ID]",
       "https://orcid.org/[0000-0000-0000-0000]",
@@ -257,6 +266,16 @@
     .two-col { display: grid; gap: 28px; margin-top: 28px; }
     @media (min-width: 700px) { .two-col { grid-template-columns: 1fr 1fr; } }
     .two-col h3 { font-size: 1.15rem; }
+    .simple-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; font-size: .95rem; }
+    .simple-list li { position: relative; padding-left: 16px; }
+    .simple-list li::before { content: ""; position: absolute; left: 0; top: .62em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+    .skills { color: var(--text-muted); font-size: .95rem; }
+    .sub-note { font-family: var(--font-body); font-size: .85rem; font-weight: 500; color: var(--text-muted); margin-left: 8px; }
+    .supervised { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px 32px; }
+    @media (min-width: 760px) { .supervised { grid-template-columns: 1fr 1fr; } }
+    .supervised li { display: flex; gap: 10px; align-items: baseline; font-size: .95rem; }
+    .supervised .tag { flex-shrink: 0; min-width: 84px; text-align: center; }
+    .date-badge .y:only-child { padding: 6px 0; }
 
     /* ==========================================================================
        RESEARCH / PUBLICATIONS
@@ -423,6 +442,8 @@
       <symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></symbol>
       <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 7-5 5 5 5m8-10 5 5-5 5"/></symbol>
       <symbol id="i-robot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="11" rx="3"/><path d="M12 4v4M9 13h.01M15 13h.01M9 16.5h6M2 12v3M22 12v3"/><circle cx="12" cy="3.5" r="1"/></symbol>
+      <symbol id="i-drone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9.5" width="6" height="5" rx="1.5"/><path d="M9 10 6 7M15 10l3-3M9 14l-3 3M15 14l3 3"/><ellipse cx="5" cy="6" rx="3" ry="1"/><ellipse cx="19" cy="6" rx="3" ry="1"/><ellipse cx="5" cy="18" rx="3" ry="1"/><ellipse cx="19" cy="18" rx="3" ry="1"/></symbol>
+      <symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-9 6-14 15-14 0 9-5 15-14 15"/><path d="M5 19c3-4 6-7 10-9"/></symbol>
       <symbol id="i-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="8" ry="2.5"/><path d="M4 5.5v13c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5v-13M4 12c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5"/></symbol>
       <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
       <symbol id="i-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m2 9 10-5 10 5-10 5L2 9Z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5M22 9v6"/></symbol>
@@ -467,14 +488,14 @@
     <section class="hero" id="home" aria-labelledby="hero-name">
       <div class="container hero-grid">
         <div class="reveal">
-          <span class="eyebrow">Robotics · Machine Learning · Data-centric AI</span>
+          <span class="eyebrow">Aerial Robotics · Visual Servoing · Computer Vision</span>
           <h1 id="hero-name">Dr. Adeel Arif</h1>
-          <p class="hero-title">Assistant Professor, Department of Computer Science</p>
-          <p class="hero-affil">University of Central Punjab, Lahore &nbsp;·&nbsp; Founder &amp; Head, LahoriBot Research Group</p>
-          <p class="hero-tagline">I build robots and machine-learning systems that learn from better data, not just bigger models, so they work reliably outside the lab.</p>
+          <p class="hero-title">Assistant Professor, Faculty of Information Technology</p>
+          <p class="hero-affil">University of Central Punjab, Lahore &nbsp;·&nbsp; Director Graduate Programs</p>
+          <p class="hero-tagline">I design vision-based control for drones and mobile robots, so they can see, track, and land on targets that won't stay still.</p>
           <div class="btn-row">
             <a class="btn btn-primary" href="#research">View My Research <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
-            <!-- PLACEHOLDER: replace # with the path to your CV, e.g. "cv/Adeel-Arif-CV.pdf" -->
+            <!-- PLACEHOLDER: replace # with the path to your CV, e.g. "Adeel-Arif-CV.pdf" -->
             <a class="btn btn-outline" href="#" download>Download CV <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a>
             <a class="btn btn-outline" href="#contact">Contact Me</a>
           </div>
@@ -486,7 +507,7 @@
     </section>
 
     <!-- ===== UPDATES SECTION ===== -->
-    <!-- PLACEHOLDER CONTENT: every item below is an example. Replace with real news, newest first. -->
+    <!-- Newest first. Add new items at the top of the list (and move the old featured item down). -->
     <section class="section-alt" id="updates" aria-labelledby="updates-title">
       <div class="container">
         <div class="section-head reveal">
@@ -494,45 +515,41 @@
           <h2 id="updates-title">Updates</h2>
         </div>
 
-        <!-- Featured update (the single most important recent item) -->
+        <!-- Featured update -->
         <article class="featured reveal">
-          <div class="date-badge"><span class="m">Oct</span><span class="y">2026</span></div>
+          <div class="date-badge"><span class="y">2025</span></div>
           <div>
             <span class="featured-label">Featured</span>
-            <h3>New grant to build data-centric perception for agricultural robots</h3>
-            <p>Our proposal on low-cost robotic crop monitoring was funded under [Funding Agency / Programme]. We are recruiting graduate students for this project.</p>
-            <span class="tag">Grant</span>
+            <h3>PhD in Electrical Engineering conferred by Shanghai Jiao Tong University</h3>
+            <p>My doctoral thesis, <em>Vision-Based Finite-Time Tracking Control of a Quadrotor for Autonomous Landing on a Moving and Tilting Platform</em>, was completed in the IRMV Lab, Department of Automation, SJTU.</p>
+            <span class="tag">Milestone</span>
           </div>
         </article>
 
         <ul class="news-list">
           <li class="card news-item reveal">
-            <div class="date-badge"><span class="m">Sep</span><span class="y">2026</span></div>
-            <div class="news-body"><p>Paper on label-noise detection for robot perception datasets accepted at [Conference 2026].</p><span class="tag">Publication</span></div>
+            <div class="date-badge"><span class="y">2023</span></div>
+            <div class="news-body"><p>Paper on finite-time tracking of a moving platform with a single camera for quadrotor landing published in <em>IEEE Transactions on Circuits and Systems I</em>.</p><span class="tag">Publication</span></div>
           </li>
           <li class="card news-item reveal">
-            <div class="date-badge"><span class="m">Aug</span><span class="y">2026</span></div>
-            <div class="news-body"><p>Invited talk on data-centric AI for robotics at [Event / University].</p><span class="tag">Talk</span></div>
+            <div class="date-badge"><span class="m">Jul</span><span class="y">2021</span></div>
+            <div class="news-body"><p>Joined the Faculty of Information Technology, University of Central Punjab, as Assistant Professor.</p><span class="tag">Appointment</span></div>
           </li>
           <li class="card news-item reveal">
-            <div class="date-badge"><span class="m">Jul</span><span class="y">2026</span></div>
-            <div class="news-body"><p>Congratulations to [Student Name] for defending their MS thesis on sim-to-real grasping.</p><span class="tag">Students</span></div>
+            <div class="date-badge"><span class="y">2021</span></div>
+            <div class="news-body"><p>Adaptive visual servo control law using a virtual reticle algorithm published in <em>Robotics and Autonomous Systems</em>.</p><span class="tag">Publication</span></div>
           </li>
           <li class="card news-item reveal">
-            <div class="date-badge"><span class="m">May</span><span class="y">2026</span></div>
-            <div class="news-body"><p>LahoriBot's warehouse-inspection robot featured in [Newspaper / TV channel].</p><span class="tag">Media</span></div>
+            <div class="date-badge"><span class="m">Sep</span><span class="y">2017</span></div>
+            <div class="news-body"><p>Awarded the Chinese Government Scholarship for PhD studies at Shanghai Jiao Tong University.</p><span class="tag">Award</span></div>
           </li>
           <li class="card news-item reveal">
-            <div class="date-badge"><span class="m">Mar</span><span class="y">2026</span></div>
-            <div class="news-body"><p>Received the [Best Teacher / Research Excellence] Award from the University of Central Punjab.</p><span class="tag">Award</span></div>
+            <div class="date-badge"><span class="y">2016</span></div>
+            <div class="news-body"><p>Received the Best Project Supervisor Award, Faculty of Engineering, UCP, for the second consecutive year.</p><span class="tag">Award</span></div>
           </li>
           <li class="card news-item reveal">
-            <div class="date-badge"><span class="m">Jan</span><span class="y">2026</span></div>
-            <div class="news-body"><p>Delivered a three-day "Applied Machine Learning" workshop for [Industry Partner] engineers.</p><span class="tag">Training</span></div>
-          </li>
-          <li class="card news-item reveal">
-            <div class="date-badge"><span class="m">Nov</span><span class="y">2025</span></div>
-            <div class="news-body"><p>Journal article on active learning for robotic manipulation published in [Journal Name].</p><span class="tag">Publication</span></div>
+            <div class="date-badge"><span class="y">2016</span></div>
+            <div class="news-body"><p>Vision-based path planning for omnidirectional mobile robots published in <em>IJCSIS</em> (vol. 14, no. 12).</p><span class="tag">Publication</span></div>
           </li>
         </ul>
       </div>
@@ -562,44 +579,83 @@
               </ul>
             </div>
             <div><a class="btn btn-primary" href="#" download>Download CV <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a></div>
+            <div>
+              <h3>Memberships</h3>
+              <ul class="simple-list">
+                <li>Member, IEEE</li>
+                <li>Pakistan Engineering Council (PEC)</li>
+                <li>Institution of Electrical &amp; Electronics Engineers Pakistan (IEEEP)</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Languages</h3>
+              <p style="margin:0;">English (fluent), Urdu (native), Punjabi</p>
+            </div>
           </aside>
 
           <div class="reveal">
-            <!-- Bio — first person. Review and edit the bracketed details. -->
-            <p class="lead">I am an Assistant Professor in the Department of Computer Science at the University of Central Punjab (UCP), Lahore, and the founder and head of <strong>LahoriBot</strong>, a research group working on robotics and applied AI.</p>
-            <p>My research sits where robotics meets machine learning. I'm especially interested in <em>data-centric AI</em>: the idea that a well-curated, well-labeled dataset often does more for a real-world system than a bigger model. My group builds perception and manipulation systems for robots and the tools to find and fix the data problems that make them fail in practice.</p>
-            <p>I earned my PhD in Robotics and Machine Learning from [University, Country]. Before joining UCP, I was an Assistant Professor at FAST National University of Computer &amp; Emerging Sciences (FAST-NUCES), Lahore. I've taught thousands of students in classrooms and online, and I care about making AI understandable to people outside computer science. [Add one sentence on awards or recognitions.]</p>
+            <!-- Bio: first person, drawn from CV -->
+            <p class="lead">I am an Assistant Professor in the Faculty of Information Technology at the University of Central Punjab (UCP), Lahore, where I also serve as Director Graduate Programs. My research is in aerial and mobile robotics, and specifically in using cameras to control robots precisely in changing environments.</p>
+            <p>I completed my PhD in Electrical Engineering at Shanghai Jiao Tong University (SJTU) as a Chinese Government Scholar in the IRMV Lab, Department of Automation. My thesis developed vision-based, finite-time control laws that let a quadrotor track and land on a platform that is both <em>moving and tilting</em>, using a single onboard camera. This work appeared in <em>IEEE Transactions on Circuits and Systems I</em> and <em>Robotics and Autonomous Systems</em>.</p>
+            <p>I hold an MS in Electrical Engineering from Government College University, Lahore, and a BS in Electrical Engineering from UCP. I have taught since 2011, as a teaching assistant, lab engineer, lecturer and assistant professor, across both electrical engineering and computing. I've supervised more than 20 undergraduate projects, from vision-guided soccer robots to machine-learning malware detection, and received UCP's Best Project Supervisor Award in 2015 and 2016.</p>
 
             <div class="two-col">
               <div>
                 <h3>Education</h3>
-                <!-- PLACEHOLDER: institutions and years -->
                 <ol class="timeline">
-                  <li><span class="yr">[Year]</span><strong>PhD, Robotics &amp; Machine Learning</strong><span class="inst">[University, Country]</span></li>
-                  <li><span class="yr">[Year]</span><strong>MS, [Computer Science / Electrical Engineering]</strong><span class="inst">[University, Country]</span></li>
-                  <li><span class="yr">[Year]</span><strong>BS, [Computer Science]</strong><span class="inst">[University, Country]</span></li>
+                  <li><span class="yr">2025</span><strong>PhD, Electrical Engineering</strong><span class="inst">Shanghai Jiao Tong University, Shanghai, China. IRMV Lab, Dept. of Automation</span></li>
+                  <li><span class="yr">2013</span><strong>MS, Electrical Engineering</strong><span class="inst">Government College University (GCU), Lahore</span></li>
+                  <li><span class="yr">2010</span><strong>BS, Electrical Engineering</strong><span class="inst">University of Central Punjab (UCP), Lahore</span></li>
                 </ol>
               </div>
               <div>
                 <h3>Appointments</h3>
                 <ol class="timeline">
-                  <li><span class="yr">[Year] – Present</span><strong>Assistant Professor, Computer Science</strong><span class="inst">University of Central Punjab, Lahore</span></li>
-                  <li><span class="yr">[Year] – Present</span><strong>Founder &amp; Head</strong><span class="inst">LahoriBot Research Group</span></li>
-                  <li><span class="yr">[Year] – [Year]</span><strong>Assistant Professor, Computer Science</strong><span class="inst">FAST-NUCES, Lahore</span></li>
+                  <li><span class="yr">Current</span><strong>Director Graduate Programs</strong><span class="inst">University of Central Punjab (additional charge)</span></li>
+                  <li><span class="yr">Jul 2021 – Present</span><strong>Assistant Professor</strong><span class="inst">Faculty of Information Technology, UCP</span></li>
+                  <li><span class="yr">Sep 2017 – Jul 2021</span><strong>PhD Research Scholar</strong><span class="inst">IRMV Lab, SEIEE, Shanghai Jiao Tong University</span></li>
+                  <li><span class="yr">Jun 2015 – Aug 2017</span><strong>Assistant Professor</strong><span class="inst">Faculty of Engineering, UCP</span></li>
+                  <li><span class="yr">Jul 2013 – Jun 2015</span><strong>Lecturer</strong><span class="inst">Faculty of Engineering, UCP</span></li>
+                  <li><span class="yr">Sep 2011 – Jul 2013</span><strong>Lab Engineer &amp; Teaching Assistant</strong><span class="inst">Faculty of Engineering, UCP</span></li>
                 </ol>
+              </div>
+            </div>
+
+            <div class="two-col" style="margin-top:8px;">
+              <div>
+                <h3>Honors &amp; Awards</h3>
+                <ul class="simple-list">
+                  <li><strong>Chinese Government Scholarship</strong> for doctoral studies, 2017–2021</li>
+                  <li><strong>Best Project Supervisor Award</strong>, Faculty of Engineering, UCP, 2015 and 2016</li>
+                  <li><strong>Outstanding Talent Development Scholarship</strong> (Phase II, 2007), Punjab Information Technology Board</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Service &amp; Leadership</h3>
+                <ul class="simple-list">
+                  <li>Organizing Committee, 25th IEEE INMIC International Multi-Topic Conference</li>
+                  <li>Organizer, national robotics competition RoboSprint 2013; Engineering Olympiad 2012–2014, 2017</li>
+                  <li>Course Coordinator: Basic Electronics, Discrete Structures, Operations Research</li>
+                  <li>Director, Electrical Installation Lab; built LabVIEW/Arduino DAQ trainers and wrote three lab manuals</li>
+                </ul>
               </div>
             </div>
 
             <h3 style="margin-top:12px;">Research Interests</h3>
             <ul class="tag-list">
-              <li class="tag">Robotics</li>
-              <li class="tag">Machine Learning</li>
-              <li class="tag">Data-centric AI</li>
+              <li class="tag">Aerial Robotics</li>
+              <li class="tag">Visual Servoing</li>
+              <li class="tag">Vision-based Control</li>
+              <li class="tag">Autonomous Landing</li>
+              <li class="tag">Finite-time Control</li>
+              <li class="tag">Robot Navigation</li>
+              <li class="tag">Agricultural Robotics</li>
               <li class="tag">Computer Vision</li>
-              <li class="tag">Robot Manipulation</li>
-              <li class="tag">Sim-to-Real Transfer</li>
-              <li class="tag">AI in Education</li>
+              <li class="tag">Machine Learning</li>
             </ul>
+
+            <h3 style="margin-top:24px;">Tools &amp; Platforms</h3>
+            <p class="skills">ROS · OpenCV · MATLAB · LabVIEW &amp; NI Vision · C/C++ · VHDL / FPGA · Arduino, PIC &amp; 8051 · PLC &amp; SCADA · Parrot AR Drone · Odroid · Kinect · Git</p>
           </div>
         </div>
       </div>
@@ -611,111 +667,101 @@
         <div class="section-head reveal">
           <span class="eyebrow">What I work on</span>
           <h2 id="research-title">Research</h2>
-          <p class="lead">My group asks one practical question: what does it take for an intelligent system to keep working when it leaves the lab?</p>
+          <p class="lead">A robot that can see is only useful if it can act on what it sees, quickly and reliably. My work connects cameras to controllers.</p>
         </div>
 
         <!-- Research area cards -->
         <div class="grid grid-4">
           <article class="card reveal">
-            <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-robot"/></svg></div>
-            <h3>Robot Learning &amp; Manipulation</h3>
-            <p>Teaching robots to grasp and handle everyday objects from a small number of demonstrations. We focus on affordable hardware so the results can be used in local industry.</p>
-          </article>
-          <article class="card reveal">
-            <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-database"/></svg></div>
-            <h3>Data-centric AI</h3>
-            <p>Methods to find mislabeled, missing, or biased data and fix it systematically. Better data often improves accuracy more cheaply than a larger model.</p>
+            <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-drone"/></svg></div>
+            <h3>Aerial Robotics &amp; Autonomous Landing</h3>
+            <p>Getting quadrotors to land on platforms that move and tilt, like a vehicle or a ship deck, using a single onboard camera. My controllers are guaranteed to converge in finite time.</p>
           </article>
           <article class="card reveal">
             <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-eye"/></svg></div>
-            <h3>Perception for Field Robots</h3>
-            <p>Computer vision that holds up in dust, glare, and clutter: agriculture, warehouses, and inspection. We build datasets that reflect conditions in South Asia.</p>
+            <h3>Visual Servoing &amp; Vision-based Control</h3>
+            <p>Closing the loop between what a robot sees and how it moves. I design adaptive visual servo laws, including a virtual-reticle method, that stay robust when the target behaves unpredictably.</p>
           </article>
           <article class="card reveal">
-            <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-cap"/></svg></div>
-            <h3>AI Education at Scale</h3>
-            <p>Studying how people learn AI online and in class, and designing course material that makes machine learning accessible to non-specialists.</p>
+            <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-robot"/></svg></div>
+            <h3>Mobile Robot Navigation</h3>
+            <p>Vision-based path planning and obstacle avoidance for wheeled and omnidirectional robots. This work began with competition robots for RoboSprint and continues through student projects.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-leaf"/></svg></div>
+            <h3>Robotics for Agriculture</h3>
+            <p>Low-cost computer vision that helps field robots navigate crop rows on broad-acre farms, toward sustainable and affordable agricultural automation.</p>
           </article>
         </div>
 
-        <!-- Selected publications -->
-        <!-- PLACEHOLDER: replace with your real publications. Keep <strong> around your own name. -->
-        <h3 class="subhead reveal">Selected Publications</h3>
+        <!-- Publications (from CV). Add co-author names and DOI links where marked. -->
+        <h3 class="subhead reveal">Publications</h3>
         <ol class="pub-list">
           <li class="card pub reveal">
-            <span class="authors">[Student A], [Co-author B], and <strong>A. Arif</strong>.</span>
-            <span class="title">"Finding the Noise: Label-Error Detection for Robot Perception Datasets."</span>
-            <span class="venue">[IEEE International Conference on Robotics and Automation (ICRA)], 2026.</span>
+            <span class="authors"><strong>A. Arif</strong>, [co-authors].</span>
+            <span class="title">"Finite-time tracking of moving platform with single camera for quadrotor autonomous landing."</span>
+            <span class="venue">IEEE Transactions on Circuits and Systems I: Regular Papers, vol. 70, 2023.</span>
             <div class="pub-links">
-              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-pdf"/></svg>PDF</a>
-              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>DOI</a>
-              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg>Code</a>
+              <a href="https://scholar.google.com/scholar?q=%22Finite-time+tracking+of+moving+platform+with+single+camera+for+quadrotor+autonomous+landing%22" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>Find paper</a>
+              <!-- <a href="https://doi.org/[DOI]"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>DOI</a> -->
             </div>
           </li>
           <li class="card pub reveal">
-            <span class="authors"><strong>A. Arif</strong>, [Co-author B], and [Co-author C].</span>
-            <span class="title">"Active Learning for Few-Shot Robotic Grasping in Cluttered Scenes."</span>
-            <span class="venue">[IEEE Robotics and Automation Letters (RA-L)], 2025.</span>
+            <span class="authors"><strong>A. Arif</strong>, [co-authors].</span>
+            <span class="title">"Adaptive visual servo control law for finite-time tracking to land quadrotor on moving platform using virtual reticle algorithm."</span>
+            <span class="venue">Robotics and Autonomous Systems, vol. 141, 2021.</span>
             <div class="pub-links">
-              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-pdf"/></svg>PDF</a>
-              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>DOI</a>
-              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg>Code</a>
+              <a href="https://scholar.google.com/scholar?q=%22Adaptive+visual+servo+control+law+for+finite-time+tracking+to+land+quadrotor+on+moving+platform%22" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>Find paper</a>
             </div>
           </li>
           <li class="card pub reveal">
-            <span class="authors">[Student D] and <strong>A. Arif</strong>.</span>
-            <span class="title">"A Field Dataset for Crop-Row Perception under Variable Lighting."</span>
-            <span class="venue">[Computers and Electronics in Agriculture], 2025.</span>
+            <span class="authors"><strong>A. Arif</strong>, [co-authors].</span>
+            <span class="title">"Multi-agent surveillance and threat evaluation for indoor environment."</span>
+            <span class="venue">IEEEP New Horizons, vol. 91–96, 2016–2017.</span>
             <div class="pub-links">
-              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-pdf"/></svg>PDF</a>
-              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>DOI</a>
-              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-database"/></svg>Dataset</a>
+              <a href="https://scholar.google.com/scholar?q=%22Multi-Agent+Surveillance+and+Threat+Evaluation+for+Indoor+Environment%22" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>Find paper</a>
             </div>
           </li>
           <li class="card pub reveal">
-            <span class="authors"><strong>A. Arif</strong> and [Co-author E].</span>
-            <span class="title">"Sim-to-Real Transfer for Low-Cost Manipulators via Domain Randomization."</span>
-            <span class="venue">[IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)], 2024.</span>
+            <span class="authors"><strong>A. Arif</strong>, [co-authors].</span>
+            <span class="title">"Vision based path planning control system for omnidirectional autonomous mobile robot."</span>
+            <span class="venue">International Journal of Computer Science and Information Security (IJCSIS), vol. 14, no. 12, 2016.</span>
             <div class="pub-links">
-              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-pdf"/></svg>PDF</a>
-              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>DOI</a>
+              <a href="https://scholar.google.com/scholar?q=%22Vision+Based+Path+Planning+Control+system+for+Omnidirectional+Autonomous+Mobile+Robot%22" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>Find paper</a>
             </div>
           </li>
           <li class="card pub reveal">
-            <span class="authors">[Co-author F], <strong>A. Arif</strong>, and [Co-author G].</span>
-            <span class="title">"Who Finishes the Course? Engagement Patterns in Large-Scale Online AI Education."</span>
-            <span class="venue">[ACM Conference on Learning @ Scale], 2023.</span>
+            <span class="authors"><strong>A. Arif</strong>, [co-authors].</span>
+            <span class="title">"Diagnostic simulation of single phase induction motor noise with different PWM schemes."</span>
+            <span class="venue">Science International (Lahore), 28(4), 2016.</span>
             <div class="pub-links">
-              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-pdf"/></svg>PDF</a>
-              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>DOI</a>
+              <a href="https://scholar.google.com/scholar?q=%22Diagnostic+Simulation+of+Single+Phase+Induction+Motor+Noise+with+Different+PWM+Schemes%22" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>Find paper</a>
             </div>
           </li>
           <li class="card pub reveal">
-            <span class="authors"><strong>A. Arif</strong>, [Co-author H], and [Co-author I].</span>
-            <span class="title">"Learning Grasp Affordances from Human Demonstration Video."</span>
-            <span class="venue">[Robotics and Autonomous Systems], 2022.</span>
+            <span class="authors"><strong>A. Arif</strong> and K. M. Butt.</span>
+            <span class="title">"Computer vision based navigation module for sustainable broad-acre agriculture robots."</span>
+            <span class="venue">Science International (Lahore), 26(5), 2014.</span>
             <div class="pub-links">
-              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-pdf"/></svg>PDF</a>
-              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>DOI</a>
-              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg>Code</a>
+              <a href="https://scholar.google.com/scholar?q=%22Computer+Vision+Based+Navigation+Module+for+Sustainable+Broad-Acre+Agriculture+Robots%22" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>Find paper</a>
             </div>
           </li>
         </ol>
         <div class="reveal" style="margin-top:24px;">
-          <a class="btn btn-outline" href="https://scholar.google.com/citations?user=[ID]" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-scholar"/></svg> Full list on Google Scholar</a>
+          <a class="btn btn-outline" href="https://scholar.google.com/citations?user=[ID]" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-scholar"/></svg> Google Scholar profile</a>
         </div>
 
         <!-- ===== JOIN MY GROUP CALLOUT (prospective students) ===== -->
         <aside class="join reveal" aria-labelledby="join-title">
           <div>
             <span class="eyebrow">Prospective students</span>
-            <h3 id="join-title">Join LahoriBot</h3>
-            <p>I'm always looking for motivated students who enjoy building things and want to see their work run on real robots. No prior robotics experience is required. Curiosity and solid programming skills matter more.</p>
-            <!-- PLACEHOLDER: update openings each semester -->
+            <h3 id="join-title">Work With Me</h3>
+            <p>I'm looking for motivated students who like building things and want to see their code fly, drive or move a real robot. Curiosity and solid programming skills matter more than prior robotics experience.</p>
+            <!-- Update openings each semester -->
             <ul>
-              <li><strong>PhD / MS:</strong> thesis positions in robot learning and data-centric AI</li>
-              <li><strong>Undergraduate:</strong> final-year projects and research assistantships</li>
-              <li><strong>Interns:</strong> summer research internships (paid where funding allows)</li>
+              <li><strong>MS / graduate:</strong> thesis topics in vision-based control, aerial robotics and robot navigation</li>
+              <li><strong>BS final-year projects:</strong> robotics, computer vision and applied machine learning</li>
+              <li><strong>Research assistants:</strong> as funding and projects allow</li>
             </ul>
           </div>
           <div class="join-box">
@@ -733,83 +779,100 @@
     </section>
 
     <!-- ===== PROJECTS SECTION ===== -->
-    <!-- PLACEHOLDER CONTENT: all project titles, agencies, grant numbers, numbers and outcomes are examples. -->
     <section id="projects" aria-labelledby="projects-title">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow">Funded work</span>
+          <span class="eyebrow">Research in practice</span>
           <h2 id="projects-title">Projects</h2>
-          <p class="lead">Research projects I lead or co-lead, with their funding and what each one delivered.</p>
+          <p class="lead">Research projects from my doctoral, master's and faculty work, with the results each one produced.</p>
         </div>
 
-        <!-- Stats strip — PLACEHOLDER numbers -->
+        <!-- Stats strip (from CV) -->
         <div class="stats reveal" role="list">
-          <div class="stat" role="listitem"><span class="num">[PKR 25M+]</span><span class="lbl">Research funding secured</span></div>
-          <div class="stat" role="listitem"><span class="num">[6]</span><span class="lbl">Projects led as PI / Co-PI</span></div>
-          <div class="stat" role="listitem"><span class="num">[20+]</span><span class="lbl">Peer-reviewed publications</span></div>
-          <div class="stat" role="listitem"><span class="num">[30+]</span><span class="lbl">Students supervised</span></div>
+          <div class="stat" role="listitem"><span class="num">6</span><span class="lbl">Journal publications</span></div>
+          <div class="stat" role="listitem"><span class="num">20+</span><span class="lbl">Student projects supervised</span></div>
+          <div class="stat" role="listitem"><span class="num">15</span><span class="lbl">Years in academia</span></div>
+          <div class="stat" role="listitem"><span class="num">2×</span><span class="lbl">Best Project Supervisor Award</span></div>
         </div>
 
         <div class="grid grid-2">
+          <!-- PLACEHOLDER: add your current (ongoing) project here, or delete this card -->
           <article class="card project reveal">
-            <div class="project-top"><h3>AgriSense: Data-centric Perception for Crop-Monitoring Robots</h3><span class="tag badge-ongoing">Ongoing</span></div>
+            <div class="project-top"><h3>[Current Project Title]</h3><span class="tag badge-ongoing">Ongoing</span></div>
             <ul class="meta">
-              <li><b>Funding:</b> [Higher Education Commission (HEC), NRPU — Grant No. XXXXX]</li>
-              <li><b>Role:</b> Principal Investigator</li>
-              <li><b>Duration:</b> [2026 – 2028]</li>
+              <li><b>Funding:</b> [Funding agency, grant no.]</li>
+              <li><b>Role:</b> [PI / Co-PI]</li>
+              <li><b>Duration:</b> [Year – Year]</li>
             </ul>
-            <p>A low-cost ground robot that monitors crop health in wheat and rice fields. We are building a labeled multi-season dataset from Punjab farms and tools for spotting labeling errors before they reach the model. The goal is to give farmers useful early warnings using equipment they can afford.</p>
-            <div class="outcomes"><strong>Planned outcomes</strong><ul><li>Open field dataset (10k+ labeled images)</li><li>Open-source robot software stack</li><li>Policy brief for provincial agriculture department</li></ul></div>
-            <div class="pub-links">
-              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>Project page</a>
-              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a>
-            </div>
+            <p>[Three or four sentences: the problem, your approach, who benefits, and what's been achieved so far.]</p>
+            <div class="outcomes"><strong>Outcomes</strong><ul><li>[Publications, software, datasets, prototypes]</li></ul></div>
           </article>
 
           <article class="card project reveal">
-            <div class="project-top"><h3>Few-Shot Grasping for Local Manufacturing</h3><span class="tag badge-ongoing">Ongoing</span></div>
+            <div class="project-top"><h3>Vision-Based Autonomous Landing of Quadrotors on Moving &amp; Tilting Platforms</h3><span class="tag badge-completed">Completed</span></div>
             <ul class="meta">
-              <li><b>Funding:</b> [Industry Partner / Ignite National Technology Fund — Grant No. XXXXX]</li>
-              <li><b>Role:</b> Principal Investigator</li>
-              <li><b>Duration:</b> [2025 – 2027]</li>
+              <li><b>Funding:</b> Chinese Government Scholarship (doctoral research)</li>
+              <li><b>Host:</b> IRMV Lab, Department of Automation, Shanghai Jiao Tong University</li>
+              <li><b>Role:</b> Lead researcher (PhD)</li>
+              <li><b>Duration:</b> 2017 – 2021</li>
             </ul>
-            <p>Robotic arms that learn new pick-and-place tasks from a handful of demonstrations instead of weeks of reprogramming. The project targets small and medium manufacturers who can't afford dedicated robotics engineers. We test on a shop floor with our industry partner.</p>
-            <div class="outcomes"><strong>Outcomes so far</strong><ul><li>2 publications (RA-L, ICRA)</li><li>Working prototype at partner facility</li></ul></div>
-            <div class="pub-links">
-              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>Project page</a>
-              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a>
-            </div>
+            <p>Landing a drone on a moving vehicle or a pitching ship deck is hard: the target moves, tilts, and may be partly out of view. I developed finite-time visual tracking and adaptive visual servo control laws that use a single onboard camera. The quadrotor converges on the platform within a guaranteed time instead of only approaching it gradually.</p>
+            <div class="outcomes"><strong>Outcomes</strong><ul><li>IEEE Transactions on Circuits and Systems I (2023)</li><li>Robotics and Autonomous Systems (2021)</li><li>PhD thesis, SJTU (2025)</li></ul></div>
           </article>
 
           <article class="card project reveal">
-            <div class="project-top"><h3>Warehouse Inspection Robot</h3><span class="tag badge-completed">Completed</span></div>
+            <div class="project-top"><h3>Real-Time Vision Module for a Humanoid Interactive Telerobot</h3><span class="tag badge-completed">Completed</span></div>
             <ul class="meta">
-              <li><b>Funding:</b> [Funding Agency — Grant No. XXXXX]</li>
-              <li><b>Role:</b> Co-PI</li>
-              <li><b>Duration:</b> [2023 – 2025]</li>
+              <li><b>Host:</b> Government College University, Lahore</li>
+              <li><b>Role:</b> Lead researcher (MS thesis)</li>
+              <li><b>Duration:</b> 2011 – 2013</li>
             </ul>
-            <p>An autonomous mobile robot that scans shelves to track inventory and flag misplaced items. We developed perception models that tolerate poor lighting and partially blocked labels. The system was piloted in a regional distribution center.</p>
-            <div class="outcomes"><strong>Outcomes</strong><ul><li>Deployed pilot; [X]% reduction in manual stock counts</li><li>1 IROS paper, national media coverage</li></ul></div>
-            <div class="pub-links">
-              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>Project page</a>
-              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-pdf"/></svg>Final report</a>
-            </div>
+            <p>Designed a LabVIEW-based real-time image processing module for a humanoid interactive optomechatronic telerobot, giving the robot the visual feedback it needed to respond to people and objects around it.</p>
+            <div class="outcomes"><strong>Outcomes</strong><ul><li>MS thesis, GCU Lahore (2013)</li><li>Reusable LabVIEW vision pipeline later used in teaching labs</li></ul></div>
           </article>
 
           <article class="card project reveal">
-            <div class="project-top"><h3>Open Urdu-English AI Curriculum</h3><span class="tag badge-completed">Completed</span></div>
+            <div class="project-top"><h3>Vision-Based Navigation for Broad-Acre Agriculture Robots</h3><span class="tag badge-completed">Completed</span></div>
             <ul class="meta">
-              <li><b>Funding:</b> [Funding Agency / Foundation — Grant No. XXXXX]</li>
-              <li><b>Role:</b> Principal Investigator</li>
-              <li><b>Duration:</b> [2022 – 2024]</li>
+              <li><b>Host:</b> Faculty of Engineering, UCP</li>
+              <li><b>Role:</b> Lead author, with K. M. Butt</li>
+              <li><b>Year:</b> 2014</li>
             </ul>
-            <p>A free, bilingual introductory AI course designed for university students and working professionals in Pakistan. We studied which teaching formats kept learners engaged and released all materials openly.</p>
-            <div class="outcomes"><strong>Outcomes</strong><ul><li>[X,000]+ learners enrolled</li><li>Open course materials adopted by [N] institutions</li><li>1 Learning @ Scale paper</li></ul></div>
-            <div class="pub-links">
-              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>Course site</a>
-              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-pdf"/></svg>Deliverables</a>
-            </div>
+            <p>A computer-vision navigation module that lets field robots follow crop rows on large farms using inexpensive cameras, a step toward sustainable, affordable agricultural automation.</p>
+            <div class="outcomes"><strong>Outcomes</strong><ul><li>Science International (Lahore), 2014</li></ul></div>
           </article>
+
+          <article class="card project reveal">
+            <div class="project-top"><h3>Multi-Agent Surveillance &amp; Threat Evaluation</h3><span class="tag badge-completed">Completed</span></div>
+            <ul class="meta">
+              <li><b>Host:</b> Faculty of Engineering, UCP</li>
+              <li><b>Role:</b> Lead author</li>
+              <li><b>Duration:</b> 2016 – 2017</li>
+            </ul>
+            <p>A system of cooperating agents that monitors indoor spaces and evaluates potential threats, combining sensing from multiple sources into a single picture of what is happening.</p>
+            <div class="outcomes"><strong>Outcomes</strong><ul><li>IEEEP New Horizons, 2016–2017</li></ul></div>
+          </article>
+        </div>
+
+        <!-- Student projects supervised (from CV) -->
+        <h3 class="subhead reveal">Selected Student Projects Supervised</h3>
+        <div class="card reveal">
+          <ul class="supervised">
+            <li><span class="tag">Robotics</span>Vision-based path planning and motion control for an omnidirectional mobile robot (theme of National RoboSprint 2013)</li>
+            <li><span class="tag">Robotics</span>Vision-based navigation module for robots on a soccer field</li>
+            <li><span class="tag">Robotics</span>LabVIEW robotic vision for mobile-robot navigation and obstacle avoidance</li>
+            <li><span class="tag">Robotics</span>Gesture-controlled forklift robot using a Kinect sensor</li>
+            <li><span class="tag">Robotics</span>Fire-fighting robot</li>
+            <li><span class="tag">Vision</span>Face-recognition security system</li>
+            <li><span class="tag">Vision</span>Cancerous cell segmentation application</li>
+            <li><span class="tag">Vision</span>Real-time adaptive reading of handwritten data in images</li>
+            <li><span class="tag">AI / ML</span>AI-driven architectural design system for dynamic floor-plan generation</li>
+            <li><span class="tag">AI / ML</span>Malware detection using machine learning</li>
+            <li><span class="tag">AI / ML</span>Deep-learning agent that learns to play games</li>
+            <li><span class="tag">AI / ML</span>"Smart Barbie": an AI learning companion for children</li>
+            <li><span class="tag">Automation</span>Wireless sensor network for central greenhouse monitoring (LabVIEW)</li>
+            <li><span class="tag">Automation</span>Adaptive traffic light control system</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -820,87 +883,130 @@
         <div class="section-head reveal">
           <span class="eyebrow">Work with me</span>
           <h2 id="services-title">Consulting &amp; Training</h2>
-          <p class="lead">I work with companies, public agencies, and universities that want to apply AI and robotics responsibly and effectively.</p>
+          <p class="lead">I work with companies, public agencies and universities on robotics, computer vision and automation projects.</p>
         </div>
         <div class="grid grid-3">
           <article class="card reveal">
             <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-briefcase"/></svg></div>
-            <h3>Research &amp; Technical Consulting</h3>
-            <p>Feasibility studies, technical audits of ML systems, and data-quality reviews for AI and automation projects.</p>
+            <h3>Robotics &amp; Vision Consulting</h3>
+            <p>Feasibility studies and technical guidance for drone, mobile-robot and machine-vision projects, from choosing the right algorithm to building a working prototype.</p>
           </article>
           <article class="card reveal">
             <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-presentation"/></svg></div>
-            <h3>Corporate Training &amp; Workshops</h3>
-            <p>Hands-on courses in machine learning, data-centric AI, and robotics, tailored to your team's level, from executives to engineers.</p>
+            <h3>Training &amp; Workshops</h3>
+            <p>Hands-on courses in ROS, OpenCV, MATLAB, LabVIEW, Arduino and PLC/SCADA automation, tailored for engineers, faculty or students.</p>
           </article>
           <article class="card reveal">
             <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-clipboard"/></svg></div>
-            <h3>Grant Proposal &amp; Project Review</h3>
-            <p>Expert review of research proposals and technical evaluation of funded projects for agencies and institutions.</p>
+            <h3>Proposal &amp; Project Review</h3>
+            <p>Expert review of research proposals, technical reports and student projects in robotics, control systems and computer vision.</p>
           </article>
         </div>
-        <p class="services-cta reveal">Available for consulting, expert review, and customized training programs. <a href="mailto:adeel.arif@ucp.edu.pk?subject=Consulting%20%2F%20Training%20Inquiry">Email me to discuss</a>.</p>
+        <p class="services-cta reveal">Available for consulting, expert review and customized training programs. <a href="mailto:adeel.arif@ucp.edu.pk?subject=Consulting%20%2F%20Training%20Inquiry">Email me to discuss</a>.</p>
       </div>
     </section>
 
     <!-- ===== COURSES SECTION ===== -->
-    <!-- PLACEHOLDER: course codes, semesters, and syllabus links -->
+    <!-- PLACEHOLDER: course codes, current semester, and syllabus links. Confirm which courses are current. -->
     <section id="courses" aria-labelledby="courses-title">
       <div class="container">
         <div class="section-head reveal">
           <span class="eyebrow">Teaching</span>
           <h2 id="courses-title">Courses</h2>
-          <p class="philosophy">"I teach the way I do research: start with a real problem, build something that works, then understand why."</p>
+          <!-- Edit this line so it reflects your own view of teaching -->
+          <p class="philosophy">"I teach the way I do research: start with a real problem, build something that works, then understand why it works."</p>
         </div>
 
-        <h3 class="subhead reveal" style="margin-top:0;">Currently Teaching</h3>
+        <h3 class="subhead reveal" style="margin-top:0;">Currently Teaching <span class="sub-note">Faculty of Information Technology</span></h3>
         <div class="reveal">
           <table class="course-table">
             <caption class="sr-only">Courses currently taught</caption>
             <thead><tr><th scope="col">Code</th><th scope="col">Course</th><th scope="col">Semester</th><th scope="col">Level</th><th scope="col">Syllabus</th></tr></thead>
             <tbody>
               <tr>
-                <td data-label="Code" class="course-code">[CS-4xx]</td>
-                <td class="c-main"><span class="course-title">Machine Learning</span><span class="course-desc">Core algorithms from regression to neural networks, with real-world projects.</span></td>
-                <td data-label="Semester">Fall 2026</td>
+                <td data-label="Code" class="course-code">[Code]</td>
+                <td class="c-main"><span class="course-title">Introduction to Machine Learning</span><span class="course-desc">Supervised and unsupervised learning, model evaluation, and hands-on projects with real data.</span></td>
+                <td data-label="Semester">[Fall 2026]</td>
                 <td data-label="Level"><span class="tag">UG</span></td>
                 <td data-label="Syllabus"><a href="#">Syllabus</a></td>
               </tr>
               <tr>
-                <td data-label="Code" class="course-code">[CS-5xx]</td>
-                <td class="c-main"><span class="course-title">Robotics</span><span class="course-desc">Kinematics, control, perception, and integrating AI on real robot hardware.</span></td>
-                <td data-label="Semester">Fall 2026</td>
-                <td data-label="Level"><span class="tag">PG</span></td>
+                <td data-label="Code" class="course-code">[Code]</td>
+                <td class="c-main"><span class="course-title">Introduction to Image Processing</span><span class="course-desc">Filtering, edges, segmentation and features: the building blocks of computer vision.</span></td>
+                <td data-label="Semester">[Fall 2026]</td>
+                <td data-label="Level"><span class="tag">UG</span></td>
+                <td data-label="Syllabus"><a href="#">Syllabus</a></td>
+              </tr>
+              <tr>
+                <td data-label="Code" class="course-code">[Code]</td>
+                <td class="c-main"><span class="course-title">Discrete Structures</span><span class="course-desc">Logic, sets, proofs, combinatorics and graphs: the mathematics behind computing. (Course coordinator)</span></td>
+                <td data-label="Semester">[Fall 2026]</td>
+                <td data-label="Level"><span class="tag">UG</span></td>
+                <td data-label="Syllabus"><a href="#">Syllabus</a></td>
+              </tr>
+              <tr>
+                <td data-label="Code" class="course-code">[Code]</td>
+                <td class="c-main"><span class="course-title">Digital Logic Design</span><span class="course-desc">Boolean algebra, combinational and sequential circuits, and the design of digital systems.</span></td>
+                <td data-label="Semester">[Fall 2026]</td>
+                <td data-label="Level"><span class="tag">UG</span></td>
+                <td data-label="Syllabus"><a href="#">Syllabus</a></td>
+              </tr>
+              <tr>
+                <td data-label="Code" class="course-code">[Code]</td>
+                <td class="c-main"><span class="course-title">Basic Electronics</span><span class="course-desc">Diodes, transistors and amplifiers for computing students. (Course coordinator)</span></td>
+                <td data-label="Semester">[Fall 2026]</td>
+                <td data-label="Level"><span class="tag">UG</span></td>
                 <td data-label="Syllabus"><a href="#">Syllabus</a></td>
               </tr>
             </tbody>
           </table>
         </div>
 
-        <h3 class="subhead reveal">Previously Taught</h3>
+        <h3 class="subhead reveal">Previously Taught <span class="sub-note">Faculty of Engineering, 2013 – 2017</span></h3>
         <div class="reveal">
           <table class="course-table">
             <caption class="sr-only">Courses previously taught</caption>
             <thead><tr><th scope="col">Code</th><th scope="col">Course</th><th scope="col">Semester</th><th scope="col">Level</th><th scope="col">Syllabus</th></tr></thead>
             <tbody>
               <tr>
-                <td data-label="Code" class="course-code">[CS-1xx]</td>
-                <td class="c-main"><span class="course-title">Artificial Intelligence for Everyone</span><span class="course-desc">A non-technical introduction to what AI can and can't do, for any major.</span></td>
-                <td data-label="Semester">Spring 2026</td>
+                <td data-label="Code" class="course-code">[Code]</td>
+                <td class="c-main"><span class="course-title">Control Systems</span><span class="course-desc">Modeling, stability and feedback controller design for dynamic systems.</span></td>
+                <td data-label="Semester">2013 – 2017</td>
                 <td data-label="Level"><span class="tag">UG</span></td>
                 <td data-label="Syllabus"><a href="#">Syllabus</a></td>
               </tr>
               <tr>
-                <td data-label="Code" class="course-code">[CS-6xx]</td>
-                <td class="c-main"><span class="course-title">Data-centric AI</span><span class="course-desc">Labeling, data cleaning, augmentation, and dataset evaluation for ML systems.</span></td>
-                <td data-label="Semester">Spring 2026</td>
-                <td data-label="Level"><span class="tag">PG</span></td>
+                <td data-label="Code" class="course-code">[Code]</td>
+                <td class="c-main"><span class="course-title">Digital Control Systems</span><span class="course-desc">Sampled-data systems, z-transforms and discrete-time controller design.</span></td>
+                <td data-label="Semester">2013 – 2017</td>
+                <td data-label="Level"><span class="tag">UG</span></td>
                 <td data-label="Syllabus"><a href="#">Syllabus</a></td>
               </tr>
               <tr>
-                <td data-label="Code" class="course-code">[CS-3xx]</td>
-                <td class="c-main"><span class="course-title">Artificial Intelligence</span><span class="course-desc">Search, planning, probabilistic reasoning, and an introduction to learning.</span></td>
-                <td data-label="Semester">[Semester Year] · FAST-NUCES</td>
+                <td data-label="Code" class="course-code">[Code]</td>
+                <td class="c-main"><span class="course-title">Digital Image Processing (+ Lab)</span><span class="course-desc">Image enhancement, restoration and analysis, with lab work in MATLAB and LabVIEW.</span></td>
+                <td data-label="Semester">2013 – 2017</td>
+                <td data-label="Level"><span class="tag">UG</span></td>
+                <td data-label="Syllabus"><a href="#">Syllabus</a></td>
+              </tr>
+              <tr>
+                <td data-label="Code" class="course-code">[Code]</td>
+                <td class="c-main"><span class="course-title">Digital System Design (+ VHDL Lab)</span><span class="course-desc">Hardware description languages and FPGA-based design of digital systems.</span></td>
+                <td data-label="Semester">2013 – 2017</td>
+                <td data-label="Level"><span class="tag">UG</span></td>
+                <td data-label="Syllabus"><a href="#">Syllabus</a></td>
+              </tr>
+              <tr>
+                <td data-label="Code" class="course-code">[Code]</td>
+                <td class="c-main"><span class="course-title">Instrumentation and Measurement</span><span class="course-desc">Sensors, signal conditioning and data acquisition, including a LabVIEW/Arduino trainer I built for the lab.</span></td>
+                <td data-label="Semester">2013 – 2017</td>
+                <td data-label="Level"><span class="tag">UG</span></td>
+                <td data-label="Syllabus"><a href="#">Syllabus</a></td>
+              </tr>
+              <tr>
+                <td data-label="Code" class="course-code">[Code]</td>
+                <td class="c-main"><span class="course-title">Basic Electrical Engineering &amp; Network Analysis (Labs)</span><span class="course-desc">Foundational circuit labs for first- and second-year engineering students.</span></td>
+                <td data-label="Semester">2011 – 2017</td>
                 <td data-label="Level"><span class="tag">UG</span></td>
                 <td data-label="Syllabus"><a href="#">Syllabus</a></td>
               </tr>
@@ -916,7 +1022,7 @@
         <div class="section-head reveal">
           <span class="eyebrow">Get in touch</span>
           <h2 id="contact-title">Contact</h2>
-          <p class="lead">Students, collaborators, and organizations are all welcome. Email is the fastest way to reach me.</p>
+          <p class="lead">Students, collaborators and organizations are all welcome. Email is the fastest way to reach me.</p>
         </div>
         <div class="contact-grid">
           <div class="reveal">
@@ -933,15 +1039,11 @@
               </li>
               <li>
                 <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span>
-                <div><span class="lbl">Office</span>[Room No.], Department of Computer Science<br>University of Central Punjab, 1-Khayaban-e-Jinnah Road, Johar Town, Lahore, Pakistan</div>
+                <div><span class="lbl">Office</span>[Room No.], Faculty of Information Technology<br>University of Central Punjab, 1-Khayaban-e-Jinnah Road, Johar Town, Lahore, Pakistan</div>
               </li>
               <li>
                 <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></span>
                 <div><span class="lbl">Office hours</span>[Mon &amp; Wed, 2:00 – 4:00 PM], or by appointment</div>
-              </li>
-              <li>
-                <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></span>
-                <div><span class="lbl">Phone (optional)</span><a href="tel:+920000000000">[+92 XXX XXXXXXX]</a></div>
               </li>
             </ul>
             <ul class="profile-links" aria-label="Academic and social profiles">
@@ -997,8 +1099,8 @@
       <div class="footer-grid">
         <div>
           <h2>Dr. Adeel Arif</h2>
-          <p>Assistant Professor of Computer Science<br>University of Central Punjab, Lahore</p>
-          <p style="font-size:.9rem;"><strong style="color:#fff;">Prospective students:</strong> I'm always looking for motivated students. See <a href="#join-title">Join LahoriBot</a> for how to reach me.</p>
+          <p>Assistant Professor, Faculty of Information Technology<br>Director Graduate Programs<br>University of Central Punjab, Lahore</p>
+          <p style="font-size:.9rem;"><strong style="color:#fff;">Prospective students:</strong> I'm always looking for motivated students. See <a href="#join-title">Work With Me</a> for how to reach me.</p>
         </div>
         <nav aria-label="Footer">
           <h3>Quick links</h3>
