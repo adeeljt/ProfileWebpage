@@ -53,11 +53,17 @@
     "url": "https://[your-domain].com/",
     "knowsAbout": ["Aerial Robotics", "Visual Servoing", "Vision-based Control", "Autonomous Quadrotor Landing", "Robot Navigation", "Computer Vision", "Machine Learning"],
     "sameAs": [
-      "https://scholar.google.com/citations?user=[ID]",
-      "https://orcid.org/[0000-0000-0000-0000]",
-      "https://www.linkedin.com/in/[handle]",
-      "https://www.researchgate.net/profile/[handle]",
-      "https://github.com/[handle]"
+      "https://scholar.google.com/citations?user=AVFz-oIAAAAJ",
+      "https://orcid.org/0000-0002-9743-7596",
+      "https://www.researchgate.net/profile/Adeel-Arif",
+      "https://www.linkedin.com/in/adeel-arif-phd-7a984350/",
+      "https://github.com/adeeljt",
+      "https://www.youtube.com/@adeelarif2266",
+      "https://x.com/adeelarif_jt",
+      "https://www.facebook.com/adeel.jt",
+      "https://www.instagram.com/adeel.jt/",
+      "https://www.pinterest.com/adeelarifjt/",
+      "https://www.tiktok.com/@adeel.arif28"
     ]
   }
   </script>
@@ -276,6 +282,11 @@
     .supervised li { display: flex; gap: 10px; align-items: baseline; font-size: .95rem; }
     .supervised .tag { flex-shrink: 0; min-width: 84px; text-align: center; }
     .date-badge .y:only-child { padding: 6px 0; }
+    @media (min-width: 760px) { .simple-list.cols-2 { grid-template-columns: 1fr 1fr; column-gap: 32px; } }
+    .award { display: flex; flex-direction: column; }
+    .award-year { font-size: .82rem; font-weight: 600; color: var(--accent); letter-spacing: .04em; margin-bottom: 4px; }
+    .award h3 { margin-bottom: 4px; }
+    .award-org { font-size: .88rem; color: var(--text-muted); margin-bottom: 10px; }
 
     /* ==========================================================================
        RESEARCH / PUBLICATIONS
@@ -443,6 +454,13 @@
       <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 7-5 5 5 5m8-10 5 5-5 5"/></symbol>
       <symbol id="i-robot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="11" rx="3"/><path d="M12 4v4M9 13h.01M15 13h.01M9 16.5h6M2 12v3M22 12v3"/><circle cx="12" cy="3.5" r="1"/></symbol>
       <symbol id="i-drone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9.5" width="6" height="5" rx="1.5"/><path d="M9 10 6 7M15 10l3-3M9 14l-3 3M15 14l3 3"/><ellipse cx="5" cy="6" rx="3" ry="1"/><ellipse cx="19" cy="6" rx="3" ry="1"/><ellipse cx="5" cy="18" rx="3" ry="1"/><ellipse cx="19" cy="18" rx="3" ry="1"/></symbol>
+      <symbol id="i-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v5a5 5 0 0 1-10 0V4Z"/><path d="M7 6H4v1a3 3 0 0 0 3 3M17 6h3v1a3 3 0 0 1-3 3M12 14v4M8 21h8M9 18h6"/></symbol>
+      <symbol id="i-facebook" viewBox="0 0 24 24"><path fill="currentColor" d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v9h4v-9h3l.5-4h-3.5V8.8c0-.5.4-.8 1-.8Z"/></symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path fill="currentColor" d="M17.75 3h3.07l-6.7 7.66L22 21h-6.17l-4.83-6.32L5.47 21H2.4l7.17-8.2L2 3h6.33l4.37 5.78L17.75 3Zm-1.08 16.2h1.7L7.4 4.73H5.58L16.67 19.2Z"/></symbol>
+      <symbol id="i-youtube" viewBox="0 0 24 24"><path fill="currentColor" d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8ZM9.75 15.02V8.98L15.5 12l-5.75 3.02Z"/></symbol>
+      <symbol id="i-pinterest" viewBox="0 0 24 24"><path fill="currentColor" d="M12 1a11 11 0 0 0-4 21.25c-.1-.9-.2-2.3 0-3.25l1.3-5.5s-.33-.66-.33-1.64c0-1.54.9-2.69 2-2.69.94 0 1.4.71 1.4 1.56 0 .95-.6 2.37-.92 3.69-.26 1.1.56 2 1.65 2 1.98 0 3.5-2.09 3.5-5.1 0-2.67-1.92-4.53-4.65-4.53-3.17 0-5.03 2.37-5.03 4.83 0 .96.37 1.98.83 2.54.09.11.1.21.08.32l-.31 1.26c-.05.2-.16.25-.37.15-1.39-.65-2.26-2.68-2.26-4.31 0-3.51 2.55-6.73 7.35-6.73 3.86 0 6.86 2.75 6.86 6.42 0 3.83-2.42 6.92-5.77 6.92-1.13 0-2.19-.59-2.55-1.28l-.7 2.65c-.25.96-.92 2.17-1.38 2.9A11 11 0 1 0 12 1Z"/></symbol>
+      <symbol id="i-tiktok" viewBox="0 0 24 24"><path fill="currentColor" d="M16.6 2h-3.4v13.4a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .9.1V9.1a6.4 6.4 0 1 0 5.4 6.3V8.6a8 8 0 0 0 4.7 1.5V6.7a4.7 4.7 0 0 1-4.7-4.7Z"/></symbol>
       <symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-9 6-14 15-14 0 9-5 15-14 15"/><path d="M5 19c3-4 6-7 10-9"/></symbol>
       <symbol id="i-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="8" ry="2.5"/><path d="M4 5.5v13c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5v-13M4 12c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5"/></symbol>
       <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
@@ -472,6 +490,7 @@
         <ul class="nav-links" id="nav-links">
           <li><a href="#updates">Updates</a></li>
           <li><a href="#about">About</a></li>
+          <li><a href="#honors">Honors</a></li>
           <li><a href="#research">Research</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#services">Services</a></li>
@@ -571,11 +590,12 @@
               <h3>Profiles</h3>
               <!-- PLACEHOLDER: replace each href with your real profile URL -->
               <ul class="profile-links">
-                <li><a href="https://scholar.google.com/citations?user=[ID]" target="_blank" rel="noopener" aria-label="Google Scholar"><svg class="icon" aria-hidden="true"><use href="#i-scholar"/></svg></a></li>
-                <li><a href="https://orcid.org/[0000-0000-0000-0000]" target="_blank" rel="noopener" aria-label="ORCID"><svg class="icon" aria-hidden="true"><use href="#i-orcid"/></svg></a></li>
-                <li><a href="https://www.linkedin.com/in/[handle]" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
-                <li><a href="https://www.researchgate.net/profile/[handle]" target="_blank" rel="noopener" aria-label="ResearchGate"><svg class="icon" aria-hidden="true"><use href="#i-researchgate"/></svg></a></li>
-                <li><a href="https://github.com/[handle]" target="_blank" rel="noopener" aria-label="GitHub"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a></li>
+                <li><a href="https://scholar.google.com/citations?user=AVFz-oIAAAAJ&amp;hl=en" target="_blank" rel="noopener me" aria-label="Google Scholar" title="Google Scholar"><svg class="icon" aria-hidden="true"><use href="#i-scholar"/></svg></a></li>
+                <li><a href="https://orcid.org/0000-0002-9743-7596" target="_blank" rel="noopener me" aria-label="ORCID" title="ORCID"><svg class="icon" aria-hidden="true"><use href="#i-orcid"/></svg></a></li>
+                <li><a href="https://www.researchgate.net/profile/Adeel-Arif" target="_blank" rel="noopener me" aria-label="ResearchGate" title="ResearchGate"><svg class="icon" aria-hidden="true"><use href="#i-researchgate"/></svg></a></li>
+                <li><a href="https://www.linkedin.com/in/adeel-arif-phd-7a984350/" target="_blank" rel="noopener me" aria-label="LinkedIn" title="LinkedIn"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
+                <li><a href="https://github.com/adeeljt" target="_blank" rel="noopener me" aria-label="GitHub" title="GitHub"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a></li>
+                <li><a href="https://www.youtube.com/@adeelarif2266" target="_blank" rel="noopener me" aria-label="YouTube" title="YouTube"><svg class="icon" aria-hidden="true"><use href="#i-youtube"/></svg></a></li>
               </ul>
             </div>
             <div><a class="btn btn-primary" href="#" download>Download CV <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a></div>
@@ -623,14 +643,6 @@
 
             <div class="two-col" style="margin-top:8px;">
               <div>
-                <h3>Honors &amp; Awards</h3>
-                <ul class="simple-list">
-                  <li><strong>Chinese Government Scholarship</strong> for doctoral studies, 2017–2021</li>
-                  <li><strong>Best Project Supervisor Award</strong>, Faculty of Engineering, UCP, 2015 and 2016</li>
-                  <li><strong>Outstanding Talent Development Scholarship</strong> (Phase II, 2007), Punjab Information Technology Board</li>
-                </ul>
-              </div>
-              <div>
                 <h3>Service &amp; Leadership</h3>
                 <ul class="simple-list">
                   <li>Organizing Committee, 25th IEEE INMIC International Multi-Topic Conference</li>
@@ -643,9 +655,6 @@
                   <li>Community service: volunteer at the psychiatric ward, Sir Ganga Ram Hospital, Lahore</li>
                 </ul>
               </div>
-            </div>
-
-            <div class="two-col" style="margin-top:8px;">
               <div>
                 <h3>Training &amp; Certification</h3>
                 <ul class="simple-list">
@@ -656,16 +665,16 @@
                   <li>Participant, Pakistan National Student Satellite (PNSS-1)</li>
                 </ul>
               </div>
-              <div>
-                <h3>Online Courses (Coursera)</h3>
-                <ul class="simple-list">
+            </div>
+            <div style="margin-top:28px;">
+                <h3 style="font-size:1.15rem;">Online Courses (Coursera)</h3>
+                <ul class="simple-list cols-2">
                   <li>AI &amp; ML: AI for Everyone (DeepLearning.AI); Generative AI (IBM); Machine Learning for Everyone</li>
                   <li>Software &amp; cloud: Software Engineering, DevOps, Cloud Computing, Agile &amp; Scrum (IBM); AWS Cloud Technical Essentials</li>
                   <li>Development: Git &amp; GitHub; GitHub Copilot with VS Code (Microsoft); Bootstrap front-ends</li>
                   <li>Embedded: Embedded Software &amp; Hardware Architecture (CU Boulder)</li>
                   <li>Project management: Planning, Budgeting &amp; Scheduling, and Risk (UC Irvine); Program Management</li>
                 </ul>
-              </div>
             </div>
 
             <h3 style="margin-top:12px;">Research Interests</h3>
@@ -688,8 +697,48 @@
       </div>
     </section>
 
+    <!-- ===== HONORS & AWARDS SECTION ===== -->
+    <section class="section-alt" id="honors" aria-labelledby="honors-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Recognition</span>
+          <h2 id="honors-title">Honors &amp; Awards</h2>
+        </div>
+        <div class="grid grid-4">
+          <article class="card award reveal">
+            <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-trophy"/></svg></div>
+            <span class="award-year">2017 – 2021</span>
+            <h3>Chinese Government Scholarship</h3>
+            <p class="award-org">Government of the People's Republic of China</p>
+            <p>Fully funded scholarship for doctoral studies at Shanghai Jiao Tong University (QS 2026: #47).</p>
+          </article>
+          <article class="card award reveal">
+            <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-trophy"/></svg></div>
+            <span class="award-year">2016</span>
+            <h3>Best Project Supervisor Award</h3>
+            <p class="award-org">Faculty of Engineering, University of Central Punjab</p>
+            <p>Recognized for the quality of the undergraduate final-year projects I supervised, for the second consecutive year.</p>
+          </article>
+          <article class="card award reveal">
+            <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-trophy"/></svg></div>
+            <span class="award-year">2015</span>
+            <h3>Best Project Supervisor Award</h3>
+            <p class="award-org">Faculty of Engineering, University of Central Punjab</p>
+            <p>Recognized for the quality of the undergraduate final-year projects I supervised.</p>
+          </article>
+          <article class="card award reveal">
+            <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-trophy"/></svg></div>
+            <span class="award-year">2007</span>
+            <h3>Outstanding Talent Development Scholarship</h3>
+            <p class="award-org">Punjab Information Technology Board, Government of Punjab</p>
+            <p>Phase II scholarship awarded to outstanding students.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== RESEARCH SECTION ===== -->
-    <section class="section-alt" id="research" aria-labelledby="research-title">
+    <section id="research" aria-labelledby="research-title">
       <div class="container">
         <div class="section-head reveal">
           <span class="eyebrow">What I work on</span>
@@ -776,7 +825,7 @@
           </li>
         </ol>
         <div class="reveal" style="margin-top:24px;">
-          <a class="btn btn-outline" href="https://scholar.google.com/citations?user=[ID]" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-scholar"/></svg> Google Scholar profile</a>
+          <a class="btn btn-outline" href="https://scholar.google.com/citations?user=AVFz-oIAAAAJ&amp;hl=en" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-scholar"/></svg> Google Scholar profile</a>
         </div>
 
         <!-- ===== JOIN MY GROUP CALLOUT (prospective students) ===== -->
@@ -807,7 +856,7 @@
     </section>
 
     <!-- ===== PROJECTS SECTION ===== -->
-    <section id="projects" aria-labelledby="projects-title">
+    <section class="section-alt" id="projects" aria-labelledby="projects-title">
       <div class="container">
         <div class="section-head reveal">
           <span class="eyebrow">Research in practice</span>
@@ -895,7 +944,7 @@
     </section>
 
     <!-- ===== SERVICES SECTION (Consulting & Training) ===== -->
-    <section class="section-alt" id="services" aria-labelledby="services-title">
+    <section id="services" aria-labelledby="services-title">
       <div class="container">
         <div class="section-head reveal">
           <span class="eyebrow">Work with me</span>
@@ -926,7 +975,7 @@
 
     <!-- ===== COURSES SECTION ===== -->
     <!-- PLACEHOLDER: course codes, current semester, and syllabus links. Confirm which courses are current. -->
-    <section id="courses" aria-labelledby="courses-title">
+    <section class="section-alt" id="courses" aria-labelledby="courses-title">
       <div class="container">
         <div class="section-head reveal">
           <span class="eyebrow">Teaching</span>
@@ -1024,7 +1073,7 @@
     </section>
 
     <!-- ===== CONTACT SECTION ===== -->
-    <section class="section-alt" id="contact" aria-labelledby="contact-title">
+    <section id="contact" aria-labelledby="contact-title">
       <div class="container">
         <div class="section-head reveal">
           <span class="eyebrow">Get in touch</span>
@@ -1054,11 +1103,17 @@
               </li>
             </ul>
             <ul class="profile-links" aria-label="Academic and social profiles">
-              <li><a href="https://scholar.google.com/citations?user=[ID]" target="_blank" rel="noopener" aria-label="Google Scholar"><svg class="icon" aria-hidden="true"><use href="#i-scholar"/></svg></a></li>
-              <li><a href="https://orcid.org/[0000-0000-0000-0000]" target="_blank" rel="noopener" aria-label="ORCID"><svg class="icon" aria-hidden="true"><use href="#i-orcid"/></svg></a></li>
-              <li><a href="https://www.linkedin.com/in/[handle]" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
-              <li><a href="https://www.researchgate.net/profile/[handle]" target="_blank" rel="noopener" aria-label="ResearchGate"><svg class="icon" aria-hidden="true"><use href="#i-researchgate"/></svg></a></li>
-              <li><a href="https://github.com/[handle]" target="_blank" rel="noopener" aria-label="GitHub"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a></li>
+              <li><a href="https://scholar.google.com/citations?user=AVFz-oIAAAAJ&amp;hl=en" target="_blank" rel="noopener me" aria-label="Google Scholar" title="Google Scholar"><svg class="icon" aria-hidden="true"><use href="#i-scholar"/></svg></a></li>
+              <li><a href="https://orcid.org/0000-0002-9743-7596" target="_blank" rel="noopener me" aria-label="ORCID" title="ORCID"><svg class="icon" aria-hidden="true"><use href="#i-orcid"/></svg></a></li>
+              <li><a href="https://www.researchgate.net/profile/Adeel-Arif" target="_blank" rel="noopener me" aria-label="ResearchGate" title="ResearchGate"><svg class="icon" aria-hidden="true"><use href="#i-researchgate"/></svg></a></li>
+              <li><a href="https://www.linkedin.com/in/adeel-arif-phd-7a984350/" target="_blank" rel="noopener me" aria-label="LinkedIn" title="LinkedIn"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
+              <li><a href="https://github.com/adeeljt" target="_blank" rel="noopener me" aria-label="GitHub" title="GitHub"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a></li>
+              <li><a href="https://www.youtube.com/@adeelarif2266" target="_blank" rel="noopener me" aria-label="YouTube" title="YouTube"><svg class="icon" aria-hidden="true"><use href="#i-youtube"/></svg></a></li>
+              <li><a href="https://x.com/adeelarif_jt" target="_blank" rel="noopener me" aria-label="X (Twitter)" title="X (Twitter)"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></a></li>
+              <li><a href="https://www.facebook.com/adeel.jt" target="_blank" rel="noopener me" aria-label="Facebook" title="Facebook"><svg class="icon" aria-hidden="true"><use href="#i-facebook"/></svg></a></li>
+              <li><a href="https://www.instagram.com/adeel.jt/" target="_blank" rel="noopener me" aria-label="Instagram" title="Instagram"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg></a></li>
+              <li><a href="https://www.pinterest.com/adeelarifjt/" target="_blank" rel="noopener me" aria-label="Pinterest" title="Pinterest"><svg class="icon" aria-hidden="true"><use href="#i-pinterest"/></svg></a></li>
+              <li><a href="https://www.tiktok.com/@adeel.arif28" target="_blank" rel="noopener me" aria-label="TikTok" title="TikTok"><svg class="icon" aria-hidden="true"><use href="#i-tiktok"/></svg></a></li>
             </ul>
           </div>
 
@@ -1114,6 +1169,7 @@
           <ul class="footer-links">
             <li><a href="#updates">Updates</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#honors">Honors</a></li>
             <li><a href="#research">Research</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#services">Services</a></li>
@@ -1123,11 +1179,18 @@
         </nav>
         <div>
           <h3>Profiles</h3>
-          <ul class="profile-links">
-            <li><a href="https://scholar.google.com/citations?user=[ID]" target="_blank" rel="noopener" aria-label="Google Scholar"><svg class="icon" aria-hidden="true"><use href="#i-scholar"/></svg></a></li>
-            <li><a href="https://orcid.org/[0000-0000-0000-0000]" target="_blank" rel="noopener" aria-label="ORCID"><svg class="icon" aria-hidden="true"><use href="#i-orcid"/></svg></a></li>
-            <li><a href="https://www.linkedin.com/in/[handle]" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
-            <li><a href="https://github.com/[handle]" target="_blank" rel="noopener" aria-label="GitHub"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a></li>
+          <ul class="profile-links" aria-label="Profiles">
+            <li><a href="https://scholar.google.com/citations?user=AVFz-oIAAAAJ&amp;hl=en" target="_blank" rel="noopener me" aria-label="Google Scholar" title="Google Scholar"><svg class="icon" aria-hidden="true"><use href="#i-scholar"/></svg></a></li>
+            <li><a href="https://orcid.org/0000-0002-9743-7596" target="_blank" rel="noopener me" aria-label="ORCID" title="ORCID"><svg class="icon" aria-hidden="true"><use href="#i-orcid"/></svg></a></li>
+            <li><a href="https://www.researchgate.net/profile/Adeel-Arif" target="_blank" rel="noopener me" aria-label="ResearchGate" title="ResearchGate"><svg class="icon" aria-hidden="true"><use href="#i-researchgate"/></svg></a></li>
+            <li><a href="https://www.linkedin.com/in/adeel-arif-phd-7a984350/" target="_blank" rel="noopener me" aria-label="LinkedIn" title="LinkedIn"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
+            <li><a href="https://github.com/adeeljt" target="_blank" rel="noopener me" aria-label="GitHub" title="GitHub"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a></li>
+            <li><a href="https://www.youtube.com/@adeelarif2266" target="_blank" rel="noopener me" aria-label="YouTube" title="YouTube"><svg class="icon" aria-hidden="true"><use href="#i-youtube"/></svg></a></li>
+            <li><a href="https://x.com/adeelarif_jt" target="_blank" rel="noopener me" aria-label="X (Twitter)" title="X (Twitter)"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></a></li>
+            <li><a href="https://www.facebook.com/adeel.jt" target="_blank" rel="noopener me" aria-label="Facebook" title="Facebook"><svg class="icon" aria-hidden="true"><use href="#i-facebook"/></svg></a></li>
+            <li><a href="https://www.instagram.com/adeel.jt/" target="_blank" rel="noopener me" aria-label="Instagram" title="Instagram"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg></a></li>
+            <li><a href="https://www.pinterest.com/adeelarifjt/" target="_blank" rel="noopener me" aria-label="Pinterest" title="Pinterest"><svg class="icon" aria-hidden="true"><use href="#i-pinterest"/></svg></a></li>
+            <li><a href="https://www.tiktok.com/@adeel.arif28" target="_blank" rel="noopener me" aria-label="TikTok" title="TikTok"><svg class="icon" aria-hidden="true"><use href="#i-tiktok"/></svg></a></li>
           </ul>
         </div>
       </div>
