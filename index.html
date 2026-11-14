@@ -1,63 +1,1159 @@
 <!DOCTYPE html>
+<!--
+  ============================================================================
+  Personal academic website — Dr. Adeel Arif
+  Single self-contained file: HTML + embedded CSS + embedded JS.
+  Edit content inside the clearly labeled sections below.
+  Anything wrapped in [square brackets] or marked "PLACEHOLDER" must be replaced
+  with real information before publishing.
+  Bio and research copy are written in FIRST PERSON.
+  ============================================================================
+-->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Adeel Arif - Profile</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
+
+  <!-- ===== SEO ===== -->
+  <title>Dr. Adeel Arif — Assistant Professor, Computer Science (AI &amp; Robotics)</title>
+  <meta name="description" content="Dr. Adeel Arif is an Assistant Professor of Computer Science at the University of Central Punjab, working on robotics, machine learning, and data-centric AI. Founder of the LahoriBot research group.">
+  <meta name="author" content="Adeel Arif">
+  <link rel="canonical" href="https://[your-domain].com/"> <!-- PLACEHOLDER: your site URL -->
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Dr. Adeel Arif — Assistant Professor, Computer Science">
+  <meta property="og:description" content="Robotics, machine learning, and data-centric AI. Research, projects, teaching, and consulting.">
+  <meta property="og:url" content="https://[your-domain].com/"> <!-- PLACEHOLDER -->
+  <meta property="og:image" content="https://[your-domain].com/adeel.jpg"> <!-- PLACEHOLDER: absolute URL to headshot -->
+  <meta property="profile:first_name" content="Adeel">
+  <meta property="profile:last_name" content="Arif">
+  <meta name="twitter:card" content="summary">
+
+  <!-- JSON-LD Person schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Adeel Arif",
+    "honorificPrefix": "Dr.",
+    "jobTitle": "Assistant Professor of Computer Science",
+    "worksFor": { "@type": "CollegeOrUniversity", "name": "University of Central Punjab" },
+    "email": "mailto:adeel.arif@ucp.edu.pk",
+    "image": "https://[your-domain].com/adeel.jpg",
+    "url": "https://[your-domain].com/",
+    "knowsAbout": ["Robotics", "Machine Learning", "Data-centric AI", "Computer Vision", "AI Education"],
+    "sameAs": [
+      "https://scholar.google.com/citations?user=[ID]",
+      "https://orcid.org/[0000-0000-0000-0000]",
+      "https://www.linkedin.com/in/[handle]",
+      "https://www.researchgate.net/profile/[handle]",
+      "https://github.com/[handle]"
+    ]
+  }
+  </script>
+
+  <!-- ===== FONTS ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       THEME — change the accent color and fonts here, in one place.
+       ========================================================================== */
+    :root {
+      --accent: #1f3a68;          /* deep navy — buttons, links, highlights */
+      --accent-hover: #142a4f;    /* slightly darker for hover states */
+      --accent-soft: #e8eef7;     /* pale tint for tags and badges */
+
+      --font-heading: "Lora", Georgia, "Times New Roman", serif;
+      --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+      --bg: #fbfaf8;              /* off-white page background */
+      --surface: #ffffff;         /* cards */
+      --surface-alt: #f3f2ee;     /* alternating section background */
+      --text: #23272f;            /* dark gray body text */
+      --text-muted: #5b6270;
+      --border: #e3e1db;
+      --success: #1e6b45;
+      --success-soft: #e3f2ea;
+      --neutral-soft: #eceae5;
+
+      --radius: 10px;
+      --shadow: 0 1px 2px rgba(20, 30, 50, .05), 0 4px 14px rgba(20, 30, 50, .05);
+      --shadow-hover: 0 2px 4px rgba(20, 30, 50, .06), 0 10px 28px rgba(20, 30, 50, .10);
+      --nav-h: 64px;
+      --maxw: 1120px;
+    }
+
+    /* ===== Base ===== */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 12px); -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text);
+      font-family: var(--font-body); font-size: 1rem; line-height: 1.65;
+      -webkit-font-smoothing: antialiased; overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    h1, h2, h3, h4 { font-family: var(--font-heading); line-height: 1.25; margin: 0 0 .5em; color: #161a21; font-weight: 600; }
+    h2 { font-size: clamp(1.7rem, 3.5vw, 2.25rem); }
+    h3 { font-size: 1.2rem; }
+    p { margin: 0 0 1em; }
+    a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: var(--accent-hover); }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+    .icon { width: 1.1em; height: 1.1em; flex-shrink: 0; vertical-align: -0.15em; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+    .skip-link { position: absolute; left: 16px; top: -60px; background: var(--accent); color: #fff; padding: 8px 14px; border-radius: 6px; z-index: 200; }
+    .skip-link:focus { top: 12px; color: #fff; }
+
+    .container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 16px; }
+    @media (min-width: 640px) { .container { padding: 0 24px; } }
+
+    section { padding: 72px 0; }
+    @media (min-width: 900px) { section { padding: 96px 0; } }
+    .section-alt { background: var(--surface-alt); }
+    .section-head { max-width: 680px; margin-bottom: 40px; }
+    .eyebrow { display: block; font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+    .lead { font-size: 1.08rem; color: var(--text-muted); }
+    h3.subhead { font-size: 1.45rem; margin: 56px 0 20px; }
+
+    /* ===== Buttons ===== */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px; justify-content: center;
+      padding: 11px 20px; border-radius: 8px; font: 500 .95rem/1.2 var(--font-body);
+      text-decoration: none; border: 1.5px solid var(--accent); cursor: pointer;
+      transition: background .2s, color .2s, transform .2s, box-shadow .2s;
+    }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); color: #fff; transform: translateY(-1px); }
+    .btn-outline { background: transparent; color: var(--accent); }
+    .btn-outline:hover { background: var(--accent-soft); color: var(--accent-hover); }
+    .btn-sm { padding: 7px 14px; font-size: .88rem; }
+
+    /* ===== Tags & badges ===== */
+    .tag { display: inline-block; font-size: .75rem; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); letter-spacing: .02em; }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0; }
+    .tag-list .tag { font-size: .85rem; padding: 6px 14px; font-weight: 500; }
+    .badge-ongoing { background: var(--success-soft); color: var(--success); }
+    .badge-completed { background: var(--neutral-soft); color: #4a4f58; }
+
+    /* ===== Cards ===== */
+    .card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 24px; box-shadow: var(--shadow); transition: transform .25s, box-shadow .25s, border-color .25s;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); border-color: #d4d8e0; }
+    .grid { display: grid; gap: 20px; }
+    @media (min-width: 640px) { .grid-2 { grid-template-columns: repeat(2, 1fr); } .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 960px) { .grid-3 { grid-template-columns: repeat(3, 1fr); } .grid-4 { grid-template-columns: repeat(4, 1fr); } }
+    @media (min-width: 640px) and (max-width: 959px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+    .card-icon { width: 46px; height: 46px; border-radius: 10px; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; margin-bottom: 16px; }
+    .card-icon .icon { width: 24px; height: 24px; }
+    .card p:last-child { margin-bottom: 0; }
+
+    /* ===== Profile icon links ===== */
+    .profile-links { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; margin: 0; }
+    .profile-links a {
+      width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center;
+      border: 1px solid var(--border); background: var(--surface); color: var(--text-muted);
+      transition: color .2s, border-color .2s, background .2s, transform .2s;
+    }
+    .profile-links a:hover { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); transform: translateY(-2px); }
+    .profile-links .icon { width: 19px; height: 19px; }
+
+    /* ==========================================================================
+       HEADER / NAV
+       ========================================================================== */
+    .site-header {
+      position: sticky; top: 0; z-index: 100; height: var(--nav-h);
+      background: rgba(251, 250, 248, .92); backdrop-filter: saturate(160%) blur(10px); -webkit-backdrop-filter: saturate(160%) blur(10px);
+      border-bottom: 1px solid transparent; transition: border-color .2s, box-shadow .2s;
+    }
+    .site-header.scrolled { border-bottom-color: var(--border); box-shadow: 0 2px 12px rgba(20, 30, 50, .05); }
+    .nav-wrap { display: flex; align-items: center; justify-content: space-between; height: 100%; }
+    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #161a21; font-family: var(--font-heading); font-weight: 600; font-size: 1.1rem; }
+    .brand-mark { width: 36px; height: 36px; border-radius: 8px; background: var(--accent); color: #fff; display: grid; place-items: center; font-size: .95rem; letter-spacing: .02em; }
+    .nav-links { display: flex; gap: 2px; list-style: none; margin: 0; padding: 0; }
+    .nav-links a {
+      display: block; padding: 8px 11px; border-radius: 6px; text-decoration: none;
+      color: var(--text-muted); font-size: .92rem; font-weight: 500; transition: color .2s, background .2s;
+    }
+    .nav-links a:hover { color: var(--accent); background: var(--accent-soft); }
+    .nav-links a.active { color: var(--accent); background: var(--accent-soft); }
+    .nav-toggle { display: none; background: none; border: 0; width: 44px; height: 44px; cursor: pointer; border-radius: 8px; color: #161a21; }
+    .nav-toggle .bar { display: block; width: 22px; height: 2px; background: currentColor; margin: 5px auto; transition: transform .25s, opacity .2s; }
+    .nav-toggle[aria-expanded="true"] .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] .bar:nth-child(2) { opacity: 0; }
+    .nav-toggle[aria-expanded="true"] .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    @media (max-width: 960px) {
+      .nav-toggle { display: block; }
+      .nav-links {
+        position: absolute; top: var(--nav-h); left: 0; right: 0; flex-direction: column; gap: 0;
+        background: var(--bg); border-bottom: 1px solid var(--border); box-shadow: 0 12px 24px rgba(20, 30, 50, .08);
+        padding: 8px 16px 16px; display: none;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 12px 10px; font-size: 1rem; border-bottom: 1px solid var(--border); border-radius: 0; }
+      .nav-links li:last-child a { border-bottom: 0; }
+    }
+
+    /* ==========================================================================
+       HERO
+       ========================================================================== */
+    .hero { padding: 48px 0 72px; }
+    @media (min-width: 900px) { .hero { padding: 88px 0 104px; } }
+    .hero-grid { display: grid; gap: 36px; align-items: center; }
+    @media (min-width: 860px) { .hero-grid { grid-template-columns: 1.4fr 1fr; gap: 64px; } }
+    .hero h1 { font-size: clamp(2.2rem, 6vw, 3.4rem); margin-bottom: 12px; letter-spacing: -.01em; }
+    .hero-title { font-size: 1.15rem; font-weight: 500; color: var(--text); margin-bottom: 4px; }
+    .hero-affil { color: var(--text-muted); margin-bottom: 22px; }
+    .hero-tagline { font-family: var(--font-heading); font-style: italic; font-size: clamp(1.1rem, 2.4vw, 1.3rem); color: #3a404b; border-left: 3px solid var(--accent); padding-left: 16px; margin-bottom: 30px; max-width: 560px; }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero-photo { position: relative; max-width: 360px; margin: 0 auto; width: 100%; }
+    @media (max-width: 859px) { .hero-photo { order: -1; max-width: 240px; } }
+    .hero-photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 14px; box-shadow: 0 18px 40px rgba(20, 30, 50, .16); position: relative; z-index: 1; }
+    .hero-photo::before { content: ""; position: absolute; inset: 18px -18px -18px 18px; border: 2px solid var(--accent); border-radius: 14px; opacity: .35; }
+
+    /* ==========================================================================
+       UPDATES
+       ========================================================================== */
+    .featured {
+      display: grid; gap: 16px; background: var(--accent); color: #fff; border-radius: var(--radius); padding: 28px; margin-bottom: 28px;
+      box-shadow: var(--shadow-hover);
+    }
+    @media (min-width: 720px) { .featured { grid-template-columns: auto 1fr; gap: 28px; align-items: center; padding: 32px 36px; } }
+    .featured .date-badge { background: rgba(255, 255, 255, .14); color: #fff; border-color: rgba(255, 255, 255, .25); }
+    .featured h3 { color: #fff; font-size: 1.35rem; margin-bottom: 6px; }
+    .featured p { color: rgba(255, 255, 255, .85); margin-bottom: 10px; }
+    .featured .tag { background: #fff; color: var(--accent); }
+    .featured-label { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: rgba(255, 255, 255, .75); display: block; margin-bottom: 6px; }
+    .news-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+    .news-item { display: flex; gap: 18px; align-items: flex-start; padding: 16px 20px; }
+    .date-badge {
+      flex-shrink: 0; width: 64px; text-align: center; border: 1px solid var(--border); border-radius: 8px; padding: 6px 0;
+      background: var(--surface-alt); line-height: 1.15;
+    }
+    .date-badge .m { display: block; font-size: .72rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+    .date-badge .y { display: block; font-family: var(--font-heading); font-size: 1.05rem; font-weight: 600; }
+    .news-body p { margin: 0 0 6px; font-weight: 500; }
+
+    /* ==========================================================================
+       ABOUT
+       ========================================================================== */
+    .about-grid { display: grid; gap: 40px; }
+    @media (min-width: 900px) { .about-grid { grid-template-columns: 300px 1fr; gap: 56px; } }
+    .about-photo img { width: 100%; max-width: 300px; aspect-ratio: 1; object-fit: cover; border-radius: var(--radius); box-shadow: var(--shadow); }
+    .about-side { display: grid; gap: 22px; align-content: start; }
+    .about-side h3 { font-size: 1rem; font-family: var(--font-body); font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--text-muted); margin-bottom: 10px; }
+    .timeline { list-style: none; padding: 0; margin: 0 0 8px; border-left: 2px solid var(--border); }
+    .timeline li { position: relative; padding: 0 0 18px 22px; }
+    .timeline li::before { content: ""; position: absolute; left: -7px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--surface); border: 2px solid var(--accent); }
+    .timeline .yr { font-size: .82rem; font-weight: 600; color: var(--accent); }
+    .timeline strong { display: block; font-weight: 600; }
+    .timeline span.inst { color: var(--text-muted); font-size: .94rem; }
+    .two-col { display: grid; gap: 28px; margin-top: 28px; }
+    @media (min-width: 700px) { .two-col { grid-template-columns: 1fr 1fr; } }
+    .two-col h3 { font-size: 1.15rem; }
+
+    /* ==========================================================================
+       RESEARCH / PUBLICATIONS
+       ========================================================================== */
+    .pub-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; counter-reset: pub; }
+    .pub { padding: 18px 22px 18px 58px; position: relative; }
+    .pub::before { counter-increment: pub; content: counter(pub); position: absolute; left: 20px; top: 18px; font-family: var(--font-heading); font-weight: 600; color: var(--accent); font-size: 1.1rem; }
+    .pub .authors { color: var(--text-muted); font-size: .94rem; }
+    .pub .authors strong { color: var(--text); }
+    .pub .title { display: block; font-weight: 600; margin: 2px 0; }
+    .pub .venue { font-style: italic; color: var(--text-muted); font-size: .94rem; }
+    .pub-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    .pub-links a {
+      display: inline-flex; align-items: center; gap: 5px; font-size: .8rem; font-weight: 600; text-decoration: none;
+      padding: 3px 10px; border: 1px solid var(--border); border-radius: 6px; color: var(--text-muted); transition: all .2s;
+    }
+    .pub-links a:hover { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); }
+    .pub-links .icon { width: 14px; height: 14px; }
+
+    .join {
+      margin-top: 56px; border: 1px solid var(--border); border-left: 5px solid var(--accent); background: var(--surface);
+      border-radius: var(--radius); padding: 28px; display: grid; gap: 24px; box-shadow: var(--shadow);
+    }
+    @media (min-width: 860px) { .join { grid-template-columns: 1.3fr 1fr; padding: 36px 40px; gap: 40px; } }
+    .join h3 { font-size: 1.5rem; }
+    .join ul { padding-left: 1.1em; margin: 0 0 1em; }
+    .join li { margin-bottom: 6px; }
+    .join-box { background: var(--surface-alt); border-radius: 8px; padding: 20px 22px; }
+    .join-box h4 { font-family: var(--font-body); font-size: .9rem; text-transform: uppercase; letter-spacing: .08em; color: var(--text-muted); }
+
+    /* ==========================================================================
+       PROJECTS
+       ========================================================================== */
+    .stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 40px; }
+    @media (min-width: 760px) { .stats { grid-template-columns: repeat(4, 1fr); } }
+    .stat { background: var(--surface); padding: 22px 16px; text-align: center; }
+    .stat .num { display: block; font-family: var(--font-heading); font-size: clamp(1.6rem, 4vw, 2.1rem); font-weight: 700; color: var(--accent); line-height: 1.1; }
+    .stat .lbl { font-size: .85rem; color: var(--text-muted); }
+    .project { display: flex; flex-direction: column; }
+    .project-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 8px; }
+    .project h3 { margin: 0; }
+    .meta { list-style: none; padding: 0; margin: 4px 0 14px; display: grid; gap: 4px; font-size: .9rem; color: var(--text-muted); }
+    .meta b { color: var(--text); font-weight: 600; }
+    .outcomes { background: var(--surface-alt); border-radius: 8px; padding: 12px 16px; font-size: .92rem; margin-bottom: 16px; }
+    .outcomes strong { display: block; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+    .outcomes ul { margin: 0; padding-left: 1.1em; }
+    .project .pub-links { margin-top: auto; }
+
+    /* ==========================================================================
+       SERVICES
+       ========================================================================== */
+    .services-cta { margin-top: 28px; text-align: center; font-size: 1.05rem; }
+
+    /* ==========================================================================
+       COURSES
+       ========================================================================== */
+    .philosophy { font-family: var(--font-heading); font-style: italic; font-size: 1.15rem; color: #3a404b; }
+    .course-table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+    .course-table th, .course-table td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .course-table th { font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; color: var(--text-muted); background: var(--surface-alt); font-weight: 600; }
+    .course-table tr:last-child td { border-bottom: 0; }
+    .course-table tbody tr { transition: background .2s; }
+    .course-table tbody tr:hover { background: #f8f9fc; }
+    .course-code { font-weight: 600; color: var(--accent); white-space: nowrap; }
+    .course-title { font-weight: 600; display: block; }
+    .course-desc { color: var(--text-muted); font-size: .92rem; }
+    /* Stack table rows into cards on small screens */
+    @media (max-width: 720px) {
+      .course-table, .course-table tbody, .course-table tr, .course-table td { display: block; width: 100%; }
+      .course-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+      .course-table tr { border-bottom: 1px solid var(--border); padding: 12px 0; }
+      .course-table tr:last-child { border-bottom: 0; }
+      .course-table td { border: 0; padding: 4px 16px; }
+      .course-table td[data-label]::before { content: attr(data-label) ": "; font-size: .78rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--text-muted); }
+      .course-table td.c-main::before { content: none; }
+    }
+
+    /* ==========================================================================
+       CONTACT
+       ========================================================================== */
+    .contact-grid { display: grid; gap: 32px; }
+    @media (min-width: 900px) { .contact-grid { grid-template-columns: 1fr 1.25fr; gap: 48px; } }
+    .contact-list { list-style: none; padding: 0; margin: 0 0 24px; display: grid; gap: 18px; }
+    .contact-list li { display: flex; gap: 14px; align-items: flex-start; }
+    .contact-list .card-icon { margin: 0; width: 40px; height: 40px; flex-shrink: 0; }
+    .contact-list .card-icon .icon { width: 20px; height: 20px; }
+    .contact-list .lbl { display: block; font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; color: var(--text-muted); font-weight: 600; }
+    .email-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; word-break: break-all; }
+    .copy-btn { background: none; border: 1px solid var(--border); border-radius: 6px; padding: 3px 9px; font: 500 .8rem var(--font-body); color: var(--text-muted); cursor: pointer; display: inline-flex; align-items: center; gap: 5px; transition: all .2s; }
+    .copy-btn:hover { color: var(--accent); border-color: var(--accent); }
+    .copy-btn.copied { color: var(--success); border-color: var(--success); }
+    .form { display: grid; gap: 16px; }
+    .form-row { display: grid; gap: 16px; }
+    @media (min-width: 560px) { .form-row { grid-template-columns: 1fr 1fr; } }
+    .field label { display: block; font-size: .88rem; font-weight: 600; margin-bottom: 6px; }
+    .field input, .field select, .field textarea {
+      width: 100%; font: inherit; font-size: 1rem; color: var(--text); background: var(--surface);
+      border: 1.5px solid var(--border); border-radius: 8px; padding: 11px 13px; transition: border-color .2s, box-shadow .2s;
+    }
+    .field textarea { min-height: 150px; resize: vertical; }
+    .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+    .form-note { font-size: .85rem; color: var(--text-muted); margin: 0; }
+    .form-status { font-size: .9rem; color: var(--success); min-height: 1.2em; margin: 0; }
+
+    /* ==========================================================================
+       FOOTER
+       ========================================================================== */
+    .site-footer { background: #121a2b; color: #c8cdd8; padding: 56px 0 28px; font-size: .94rem; }
+    .site-footer a { color: #e3e7ef; text-decoration: none; }
+    .site-footer a:hover { color: #fff; text-decoration: underline; }
+    .footer-grid { display: grid; gap: 32px; margin-bottom: 36px; }
+    @media (min-width: 760px) { .footer-grid { grid-template-columns: 1.3fr 1fr 1fr; } }
+    .site-footer h2 { color: #fff; font-size: 1.25rem; margin-bottom: 4px; }
+    .site-footer h3 { color: #fff; font-family: var(--font-body); font-size: .8rem; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 12px; }
+    .footer-links { list-style: none; padding: 0; margin: 0; columns: 2; }
+    .footer-links li { margin-bottom: 6px; }
+    .footer-bottom { border-top: 1px solid rgba(255, 255, 255, .12); padding-top: 22px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; font-size: .85rem; color: #9aa3b5; }
+    .site-footer .profile-links a { background: transparent; border-color: rgba(255, 255, 255, .2); color: #c8cdd8; }
+    .site-footer .profile-links a:hover { background: rgba(255, 255, 255, .08); border-color: #fff; color: #fff; }
+
+    /* ===== Back to top ===== */
+    .to-top {
+      position: fixed; right: 18px; bottom: 18px; width: 46px; height: 46px; border-radius: 50%; border: 0;
+      background: var(--accent); color: #fff; display: grid; place-items: center; cursor: pointer; z-index: 90;
+      box-shadow: 0 6px 18px rgba(20, 30, 50, .25); opacity: 0; visibility: hidden; transform: translateY(10px);
+      transition: opacity .25s, transform .25s, visibility .25s, background .2s;
+    }
+    .to-top.show { opacity: 1; visibility: visible; transform: none; }
+    .to-top:hover { background: var(--accent-hover); }
+
+    /* ===== Fade-in on scroll (only when JS is running) ===== */
+    .js .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+    .js .reveal.visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .js .reveal { opacity: 1; transform: none; transition: none; }
+      .card, .card:hover, .btn, .profile-links a { transition: none; transform: none; }
+    }
+
+    @media print {
+      .site-header, .to-top, .form, .nav-toggle { display: none !important; }
+      .js .reveal { opacity: 1; transform: none; }
+    }
+  </style>
 </head>
+
 <body>
-  <header class="main-header">
-    <div class="container nav-container">
-      <div class="logo"><a href="index.html" style="color:inherit; text-decoration:none;">Adeel Arif</a></div>
-      <button class="mobile-menu-toggle" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <nav class="main-nav">
-        <a href="about.html">About</a>
-        <a href="research.html">Research</a>
-        <a href="projects.html">Projects</a>
-        <a href="courses.html">Courses</a>
-        <a href="data-centric-ai.html">Data-centric AI</a>
-        <a href="contact.html">Contact</a>
+  <script>document.documentElement.classList.add('js');</script>
+
+  <!-- ===== SVG ICON SPRITE (referenced with <use href="#i-name">) ===== -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-scholar" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3Zm-6.5 9.4v4.1L12 20l6.5-3.5v-4.1L12 16l-6.5-3.6Z"/></symbol>
+      <symbol id="i-orcid" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10.5" fill="none" stroke="currentColor" stroke-width="1.8"/><text x="12" y="16" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="10" fill="currentColor">iD</text></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45Z"/></symbol>
+      <symbol id="i-researchgate" viewBox="0 0 24 24"><rect x="1.5" y="1.5" width="21" height="21" rx="4" fill="none" stroke="currentColor" stroke-width="1.8"/><text x="11.5" y="16.5" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="10" fill="currentColor">R<tspan font-size="7" dy="-3.5">G</tspan></text></symbol>
+      <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.4-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.68.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+      <symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"/></symbol>
+      <symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+      <symbol id="i-arrow-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5m-6 6 6-6 6 6"/></symbol>
+      <symbol id="i-pdf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9l-6-6Z"/><path d="M14 3v6h6M8 14h8M8 17h5"/></symbol>
+      <symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></symbol>
+      <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 7-5 5 5 5m8-10 5 5-5 5"/></symbol>
+      <symbol id="i-robot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="11" rx="3"/><path d="M12 4v4M9 13h.01M15 13h.01M9 16.5h6M2 12v3M22 12v3"/><circle cx="12" cy="3.5" r="1"/></symbol>
+      <symbol id="i-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="8" ry="2.5"/><path d="M4 5.5v13c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5v-13M4 12c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5"/></symbol>
+      <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+      <symbol id="i-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m2 9 10-5 10 5-10 5L2 9Z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5M22 9v6"/></symbol>
+      <symbol id="i-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></symbol>
+      <symbol id="i-presentation" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18M4 4v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4M12 16v4m-4 0h8M8 11l3-3 2 2 3-3"/></symbol>
+      <symbol id="i-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1M9 12l2 2 4-4"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></symbol>
+    </defs>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===== HEADER / NAVIGATION ===== -->
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home" aria-label="Dr. Adeel Arif — home">
+        <span class="brand-mark" aria-hidden="true">AA</span>
+        <span>Adeel Arif</span>
+      </a>
+      <nav aria-label="Primary">
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#updates">Updates</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
       </nav>
     </div>
   </header>
-  <main>
-    <section class="hero">
-      <div class="container hero-container">
-        <img src="adeel.jpg" alt="Profile Photo" class="profile-pic-large">
-        <div class="hero-text">
-          <h1>Dr. Adeel Arif</h1>
-          <p class="subtitle">Assistant Professor, AI Researcher, Robotics Enthusiast</p>
-          <p>Founder & Head of Research Group LahoriBot. Former Assistant Professor at University of Central Punjab and FAST National University Lahore. PhD in Robotics and Machine Learning.</p>
+
+  <main id="main">
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="home" aria-labelledby="hero-name">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <span class="eyebrow">Robotics · Machine Learning · Data-centric AI</span>
+          <h1 id="hero-name">Dr. Adeel Arif</h1>
+          <p class="hero-title">Assistant Professor, Department of Computer Science</p>
+          <p class="hero-affil">University of Central Punjab, Lahore &nbsp;·&nbsp; Founder &amp; Head, LahoriBot Research Group</p>
+          <p class="hero-tagline">I build robots and machine-learning systems that learn from better data, not just bigger models, so they work reliably outside the lab.</p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="#research">View My Research <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+            <!-- PLACEHOLDER: replace # with the path to your CV, e.g. "cv/Adeel-Arif-CV.pdf" -->
+            <a class="btn btn-outline" href="#" download>Download CV <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a>
+            <a class="btn btn-outline" href="#contact">Contact Me</a>
+          </div>
+        </div>
+        <div class="hero-photo reveal">
+          <img src="adeel.jpg" alt="Portrait of Dr. Adeel Arif" width="360" height="450" fetchpriority="high">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== UPDATES SECTION ===== -->
+    <!-- PLACEHOLDER CONTENT: every item below is an example. Replace with real news, newest first. -->
+    <section class="section-alt" id="updates" aria-labelledby="updates-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Latest</span>
+          <h2 id="updates-title">Updates</h2>
+        </div>
+
+        <!-- Featured update (the single most important recent item) -->
+        <article class="featured reveal">
+          <div class="date-badge"><span class="m">Oct</span><span class="y">2026</span></div>
+          <div>
+            <span class="featured-label">Featured</span>
+            <h3>New grant to build data-centric perception for agricultural robots</h3>
+            <p>Our proposal on low-cost robotic crop monitoring was funded under [Funding Agency / Programme]. We are recruiting graduate students for this project.</p>
+            <span class="tag">Grant</span>
+          </div>
+        </article>
+
+        <ul class="news-list">
+          <li class="card news-item reveal">
+            <div class="date-badge"><span class="m">Sep</span><span class="y">2026</span></div>
+            <div class="news-body"><p>Paper on label-noise detection for robot perception datasets accepted at [Conference 2026].</p><span class="tag">Publication</span></div>
+          </li>
+          <li class="card news-item reveal">
+            <div class="date-badge"><span class="m">Aug</span><span class="y">2026</span></div>
+            <div class="news-body"><p>Invited talk on data-centric AI for robotics at [Event / University].</p><span class="tag">Talk</span></div>
+          </li>
+          <li class="card news-item reveal">
+            <div class="date-badge"><span class="m">Jul</span><span class="y">2026</span></div>
+            <div class="news-body"><p>Congratulations to [Student Name] for defending their MS thesis on sim-to-real grasping.</p><span class="tag">Students</span></div>
+          </li>
+          <li class="card news-item reveal">
+            <div class="date-badge"><span class="m">May</span><span class="y">2026</span></div>
+            <div class="news-body"><p>LahoriBot's warehouse-inspection robot featured in [Newspaper / TV channel].</p><span class="tag">Media</span></div>
+          </li>
+          <li class="card news-item reveal">
+            <div class="date-badge"><span class="m">Mar</span><span class="y">2026</span></div>
+            <div class="news-body"><p>Received the [Best Teacher / Research Excellence] Award from the University of Central Punjab.</p><span class="tag">Award</span></div>
+          </li>
+          <li class="card news-item reveal">
+            <div class="date-badge"><span class="m">Jan</span><span class="y">2026</span></div>
+            <div class="news-body"><p>Delivered a three-day "Applied Machine Learning" workshop for [Industry Partner] engineers.</p><span class="tag">Training</span></div>
+          </li>
+          <li class="card news-item reveal">
+            <div class="date-badge"><span class="m">Nov</span><span class="y">2025</span></div>
+            <div class="news-body"><p>Journal article on active learning for robotic manipulation published in [Journal Name].</p><span class="tag">Publication</span></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT SECTION ===== -->
+    <section id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Who I am</span>
+          <h2 id="about-title">About Me</h2>
+        </div>
+        <div class="about-grid">
+          <aside class="about-side reveal">
+            <div class="about-photo">
+              <img src="adeel.jpg" alt="Dr. Adeel Arif" width="300" height="300" loading="lazy">
+            </div>
+            <div>
+              <h3>Profiles</h3>
+              <!-- PLACEHOLDER: replace each href with your real profile URL -->
+              <ul class="profile-links">
+                <li><a href="https://scholar.google.com/citations?user=[ID]" target="_blank" rel="noopener" aria-label="Google Scholar"><svg class="icon" aria-hidden="true"><use href="#i-scholar"/></svg></a></li>
+                <li><a href="https://orcid.org/[0000-0000-0000-0000]" target="_blank" rel="noopener" aria-label="ORCID"><svg class="icon" aria-hidden="true"><use href="#i-orcid"/></svg></a></li>
+                <li><a href="https://www.linkedin.com/in/[handle]" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
+                <li><a href="https://www.researchgate.net/profile/[handle]" target="_blank" rel="noopener" aria-label="ResearchGate"><svg class="icon" aria-hidden="true"><use href="#i-researchgate"/></svg></a></li>
+                <li><a href="https://github.com/[handle]" target="_blank" rel="noopener" aria-label="GitHub"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a></li>
+              </ul>
+            </div>
+            <div><a class="btn btn-primary" href="#" download>Download CV <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a></div>
+          </aside>
+
+          <div class="reveal">
+            <!-- Bio — first person. Review and edit the bracketed details. -->
+            <p class="lead">I am an Assistant Professor in the Department of Computer Science at the University of Central Punjab (UCP), Lahore, and the founder and head of <strong>LahoriBot</strong>, a research group working on robotics and applied AI.</p>
+            <p>My research sits where robotics meets machine learning. I'm especially interested in <em>data-centric AI</em>: the idea that a well-curated, well-labeled dataset often does more for a real-world system than a bigger model. My group builds perception and manipulation systems for robots and the tools to find and fix the data problems that make them fail in practice.</p>
+            <p>I earned my PhD in Robotics and Machine Learning from [University, Country]. Before joining UCP, I was an Assistant Professor at FAST National University of Computer &amp; Emerging Sciences (FAST-NUCES), Lahore. I've taught thousands of students in classrooms and online, and I care about making AI understandable to people outside computer science. [Add one sentence on awards or recognitions.]</p>
+
+            <div class="two-col">
+              <div>
+                <h3>Education</h3>
+                <!-- PLACEHOLDER: institutions and years -->
+                <ol class="timeline">
+                  <li><span class="yr">[Year]</span><strong>PhD, Robotics &amp; Machine Learning</strong><span class="inst">[University, Country]</span></li>
+                  <li><span class="yr">[Year]</span><strong>MS, [Computer Science / Electrical Engineering]</strong><span class="inst">[University, Country]</span></li>
+                  <li><span class="yr">[Year]</span><strong>BS, [Computer Science]</strong><span class="inst">[University, Country]</span></li>
+                </ol>
+              </div>
+              <div>
+                <h3>Appointments</h3>
+                <ol class="timeline">
+                  <li><span class="yr">[Year] – Present</span><strong>Assistant Professor, Computer Science</strong><span class="inst">University of Central Punjab, Lahore</span></li>
+                  <li><span class="yr">[Year] – Present</span><strong>Founder &amp; Head</strong><span class="inst">LahoriBot Research Group</span></li>
+                  <li><span class="yr">[Year] – [Year]</span><strong>Assistant Professor, Computer Science</strong><span class="inst">FAST-NUCES, Lahore</span></li>
+                </ol>
+              </div>
+            </div>
+
+            <h3 style="margin-top:12px;">Research Interests</h3>
+            <ul class="tag-list">
+              <li class="tag">Robotics</li>
+              <li class="tag">Machine Learning</li>
+              <li class="tag">Data-centric AI</li>
+              <li class="tag">Computer Vision</li>
+              <li class="tag">Robot Manipulation</li>
+              <li class="tag">Sim-to-Real Transfer</li>
+              <li class="tag">AI in Education</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== RESEARCH SECTION ===== -->
+    <section class="section-alt" id="research" aria-labelledby="research-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">What I work on</span>
+          <h2 id="research-title">Research</h2>
+          <p class="lead">My group asks one practical question: what does it take for an intelligent system to keep working when it leaves the lab?</p>
+        </div>
+
+        <!-- Research area cards -->
+        <div class="grid grid-4">
+          <article class="card reveal">
+            <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-robot"/></svg></div>
+            <h3>Robot Learning &amp; Manipulation</h3>
+            <p>Teaching robots to grasp and handle everyday objects from a small number of demonstrations. We focus on affordable hardware so the results can be used in local industry.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-database"/></svg></div>
+            <h3>Data-centric AI</h3>
+            <p>Methods to find mislabeled, missing, or biased data and fix it systematically. Better data often improves accuracy more cheaply than a larger model.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-eye"/></svg></div>
+            <h3>Perception for Field Robots</h3>
+            <p>Computer vision that holds up in dust, glare, and clutter: agriculture, warehouses, and inspection. We build datasets that reflect conditions in South Asia.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-cap"/></svg></div>
+            <h3>AI Education at Scale</h3>
+            <p>Studying how people learn AI online and in class, and designing course material that makes machine learning accessible to non-specialists.</p>
+          </article>
+        </div>
+
+        <!-- Selected publications -->
+        <!-- PLACEHOLDER: replace with your real publications. Keep <strong> around your own name. -->
+        <h3 class="subhead reveal">Selected Publications</h3>
+        <ol class="pub-list">
+          <li class="card pub reveal">
+            <span class="authors">[Student A], [Co-author B], and <strong>A. Arif</strong>.</span>
+            <span class="title">"Finding the Noise: Label-Error Detection for Robot Perception Datasets."</span>
+            <span class="venue">[IEEE International Conference on Robotics and Automation (ICRA)], 2026.</span>
+            <div class="pub-links">
+              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-pdf"/></svg>PDF</a>
+              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>DOI</a>
+              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg>Code</a>
+            </div>
+          </li>
+          <li class="card pub reveal">
+            <span class="authors"><strong>A. Arif</strong>, [Co-author B], and [Co-author C].</span>
+            <span class="title">"Active Learning for Few-Shot Robotic Grasping in Cluttered Scenes."</span>
+            <span class="venue">[IEEE Robotics and Automation Letters (RA-L)], 2025.</span>
+            <div class="pub-links">
+              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-pdf"/></svg>PDF</a>
+              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>DOI</a>
+              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg>Code</a>
+            </div>
+          </li>
+          <li class="card pub reveal">
+            <span class="authors">[Student D] and <strong>A. Arif</strong>.</span>
+            <span class="title">"A Field Dataset for Crop-Row Perception under Variable Lighting."</span>
+            <span class="venue">[Computers and Electronics in Agriculture], 2025.</span>
+            <div class="pub-links">
+              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-pdf"/></svg>PDF</a>
+              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>DOI</a>
+              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-database"/></svg>Dataset</a>
+            </div>
+          </li>
+          <li class="card pub reveal">
+            <span class="authors"><strong>A. Arif</strong> and [Co-author E].</span>
+            <span class="title">"Sim-to-Real Transfer for Low-Cost Manipulators via Domain Randomization."</span>
+            <span class="venue">[IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)], 2024.</span>
+            <div class="pub-links">
+              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-pdf"/></svg>PDF</a>
+              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>DOI</a>
+            </div>
+          </li>
+          <li class="card pub reveal">
+            <span class="authors">[Co-author F], <strong>A. Arif</strong>, and [Co-author G].</span>
+            <span class="title">"Who Finishes the Course? Engagement Patterns in Large-Scale Online AI Education."</span>
+            <span class="venue">[ACM Conference on Learning @ Scale], 2023.</span>
+            <div class="pub-links">
+              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-pdf"/></svg>PDF</a>
+              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>DOI</a>
+            </div>
+          </li>
+          <li class="card pub reveal">
+            <span class="authors"><strong>A. Arif</strong>, [Co-author H], and [Co-author I].</span>
+            <span class="title">"Learning Grasp Affordances from Human Demonstration Video."</span>
+            <span class="venue">[Robotics and Autonomous Systems], 2022.</span>
+            <div class="pub-links">
+              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-pdf"/></svg>PDF</a>
+              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>DOI</a>
+              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg>Code</a>
+            </div>
+          </li>
+        </ol>
+        <div class="reveal" style="margin-top:24px;">
+          <a class="btn btn-outline" href="https://scholar.google.com/citations?user=[ID]" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-scholar"/></svg> Full list on Google Scholar</a>
+        </div>
+
+        <!-- ===== JOIN MY GROUP CALLOUT (prospective students) ===== -->
+        <aside class="join reveal" aria-labelledby="join-title">
+          <div>
+            <span class="eyebrow">Prospective students</span>
+            <h3 id="join-title">Join LahoriBot</h3>
+            <p>I'm always looking for motivated students who enjoy building things and want to see their work run on real robots. No prior robotics experience is required. Curiosity and solid programming skills matter more.</p>
+            <!-- PLACEHOLDER: update openings each semester -->
+            <ul>
+              <li><strong>PhD / MS:</strong> thesis positions in robot learning and data-centric AI</li>
+              <li><strong>Undergraduate:</strong> final-year projects and research assistantships</li>
+              <li><strong>Interns:</strong> summer research internships (paid where funding allows)</li>
+            </ul>
+          </div>
+          <div class="join-box">
+            <h4>When you email me, include</h4>
+            <ol>
+              <li>Your CV</li>
+              <li>Your transcript (unofficial is fine)</li>
+              <li>One paragraph on what you'd like to work on and why</li>
+            </ol>
+            <p style="font-size:.9rem; color:var(--text-muted);">Please use the subject line "Prospective Student – [Your Name]".</p>
+            <a class="btn btn-primary" href="mailto:adeel.arif@ucp.edu.pk?subject=Prospective%20Student%20%E2%80%93%20%5BYour%20Name%5D"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg> Email me</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS SECTION ===== -->
+    <!-- PLACEHOLDER CONTENT: all project titles, agencies, grant numbers, numbers and outcomes are examples. -->
+    <section id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Funded work</span>
+          <h2 id="projects-title">Projects</h2>
+          <p class="lead">Research projects I lead or co-lead, with their funding and what each one delivered.</p>
+        </div>
+
+        <!-- Stats strip — PLACEHOLDER numbers -->
+        <div class="stats reveal" role="list">
+          <div class="stat" role="listitem"><span class="num">[PKR 25M+]</span><span class="lbl">Research funding secured</span></div>
+          <div class="stat" role="listitem"><span class="num">[6]</span><span class="lbl">Projects led as PI / Co-PI</span></div>
+          <div class="stat" role="listitem"><span class="num">[20+]</span><span class="lbl">Peer-reviewed publications</span></div>
+          <div class="stat" role="listitem"><span class="num">[30+]</span><span class="lbl">Students supervised</span></div>
+        </div>
+
+        <div class="grid grid-2">
+          <article class="card project reveal">
+            <div class="project-top"><h3>AgriSense: Data-centric Perception for Crop-Monitoring Robots</h3><span class="tag badge-ongoing">Ongoing</span></div>
+            <ul class="meta">
+              <li><b>Funding:</b> [Higher Education Commission (HEC), NRPU — Grant No. XXXXX]</li>
+              <li><b>Role:</b> Principal Investigator</li>
+              <li><b>Duration:</b> [2026 – 2028]</li>
+            </ul>
+            <p>A low-cost ground robot that monitors crop health in wheat and rice fields. We are building a labeled multi-season dataset from Punjab farms and tools for spotting labeling errors before they reach the model. The goal is to give farmers useful early warnings using equipment they can afford.</p>
+            <div class="outcomes"><strong>Planned outcomes</strong><ul><li>Open field dataset (10k+ labeled images)</li><li>Open-source robot software stack</li><li>Policy brief for provincial agriculture department</li></ul></div>
+            <div class="pub-links">
+              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>Project page</a>
+              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a>
+            </div>
+          </article>
+
+          <article class="card project reveal">
+            <div class="project-top"><h3>Few-Shot Grasping for Local Manufacturing</h3><span class="tag badge-ongoing">Ongoing</span></div>
+            <ul class="meta">
+              <li><b>Funding:</b> [Industry Partner / Ignite National Technology Fund — Grant No. XXXXX]</li>
+              <li><b>Role:</b> Principal Investigator</li>
+              <li><b>Duration:</b> [2025 – 2027]</li>
+            </ul>
+            <p>Robotic arms that learn new pick-and-place tasks from a handful of demonstrations instead of weeks of reprogramming. The project targets small and medium manufacturers who can't afford dedicated robotics engineers. We test on a shop floor with our industry partner.</p>
+            <div class="outcomes"><strong>Outcomes so far</strong><ul><li>2 publications (RA-L, ICRA)</li><li>Working prototype at partner facility</li></ul></div>
+            <div class="pub-links">
+              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>Project page</a>
+              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a>
+            </div>
+          </article>
+
+          <article class="card project reveal">
+            <div class="project-top"><h3>Warehouse Inspection Robot</h3><span class="tag badge-completed">Completed</span></div>
+            <ul class="meta">
+              <li><b>Funding:</b> [Funding Agency — Grant No. XXXXX]</li>
+              <li><b>Role:</b> Co-PI</li>
+              <li><b>Duration:</b> [2023 – 2025]</li>
+            </ul>
+            <p>An autonomous mobile robot that scans shelves to track inventory and flag misplaced items. We developed perception models that tolerate poor lighting and partially blocked labels. The system was piloted in a regional distribution center.</p>
+            <div class="outcomes"><strong>Outcomes</strong><ul><li>Deployed pilot; [X]% reduction in manual stock counts</li><li>1 IROS paper, national media coverage</li></ul></div>
+            <div class="pub-links">
+              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>Project page</a>
+              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-pdf"/></svg>Final report</a>
+            </div>
+          </article>
+
+          <article class="card project reveal">
+            <div class="project-top"><h3>Open Urdu-English AI Curriculum</h3><span class="tag badge-completed">Completed</span></div>
+            <ul class="meta">
+              <li><b>Funding:</b> [Funding Agency / Foundation — Grant No. XXXXX]</li>
+              <li><b>Role:</b> Principal Investigator</li>
+              <li><b>Duration:</b> [2022 – 2024]</li>
+            </ul>
+            <p>A free, bilingual introductory AI course designed for university students and working professionals in Pakistan. We studied which teaching formats kept learners engaged and released all materials openly.</p>
+            <div class="outcomes"><strong>Outcomes</strong><ul><li>[X,000]+ learners enrolled</li><li>Open course materials adopted by [N] institutions</li><li>1 Learning @ Scale paper</li></ul></div>
+            <div class="pub-links">
+              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>Course site</a>
+              <a href="#"><svg class="icon" aria-hidden="true"><use href="#i-pdf"/></svg>Deliverables</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICES SECTION (Consulting & Training) ===== -->
+    <section class="section-alt" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Work with me</span>
+          <h2 id="services-title">Consulting &amp; Training</h2>
+          <p class="lead">I work with companies, public agencies, and universities that want to apply AI and robotics responsibly and effectively.</p>
+        </div>
+        <div class="grid grid-3">
+          <article class="card reveal">
+            <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-briefcase"/></svg></div>
+            <h3>Research &amp; Technical Consulting</h3>
+            <p>Feasibility studies, technical audits of ML systems, and data-quality reviews for AI and automation projects.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-presentation"/></svg></div>
+            <h3>Corporate Training &amp; Workshops</h3>
+            <p>Hands-on courses in machine learning, data-centric AI, and robotics, tailored to your team's level, from executives to engineers.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-clipboard"/></svg></div>
+            <h3>Grant Proposal &amp; Project Review</h3>
+            <p>Expert review of research proposals and technical evaluation of funded projects for agencies and institutions.</p>
+          </article>
+        </div>
+        <p class="services-cta reveal">Available for consulting, expert review, and customized training programs. <a href="mailto:adeel.arif@ucp.edu.pk?subject=Consulting%20%2F%20Training%20Inquiry">Email me to discuss</a>.</p>
+      </div>
+    </section>
+
+    <!-- ===== COURSES SECTION ===== -->
+    <!-- PLACEHOLDER: course codes, semesters, and syllabus links -->
+    <section id="courses" aria-labelledby="courses-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Teaching</span>
+          <h2 id="courses-title">Courses</h2>
+          <p class="philosophy">"I teach the way I do research: start with a real problem, build something that works, then understand why."</p>
+        </div>
+
+        <h3 class="subhead reveal" style="margin-top:0;">Currently Teaching</h3>
+        <div class="reveal">
+          <table class="course-table">
+            <caption class="sr-only">Courses currently taught</caption>
+            <thead><tr><th scope="col">Code</th><th scope="col">Course</th><th scope="col">Semester</th><th scope="col">Level</th><th scope="col">Syllabus</th></tr></thead>
+            <tbody>
+              <tr>
+                <td data-label="Code" class="course-code">[CS-4xx]</td>
+                <td class="c-main"><span class="course-title">Machine Learning</span><span class="course-desc">Core algorithms from regression to neural networks, with real-world projects.</span></td>
+                <td data-label="Semester">Fall 2026</td>
+                <td data-label="Level"><span class="tag">UG</span></td>
+                <td data-label="Syllabus"><a href="#">Syllabus</a></td>
+              </tr>
+              <tr>
+                <td data-label="Code" class="course-code">[CS-5xx]</td>
+                <td class="c-main"><span class="course-title">Robotics</span><span class="course-desc">Kinematics, control, perception, and integrating AI on real robot hardware.</span></td>
+                <td data-label="Semester">Fall 2026</td>
+                <td data-label="Level"><span class="tag">PG</span></td>
+                <td data-label="Syllabus"><a href="#">Syllabus</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="subhead reveal">Previously Taught</h3>
+        <div class="reveal">
+          <table class="course-table">
+            <caption class="sr-only">Courses previously taught</caption>
+            <thead><tr><th scope="col">Code</th><th scope="col">Course</th><th scope="col">Semester</th><th scope="col">Level</th><th scope="col">Syllabus</th></tr></thead>
+            <tbody>
+              <tr>
+                <td data-label="Code" class="course-code">[CS-1xx]</td>
+                <td class="c-main"><span class="course-title">Artificial Intelligence for Everyone</span><span class="course-desc">A non-technical introduction to what AI can and can't do, for any major.</span></td>
+                <td data-label="Semester">Spring 2026</td>
+                <td data-label="Level"><span class="tag">UG</span></td>
+                <td data-label="Syllabus"><a href="#">Syllabus</a></td>
+              </tr>
+              <tr>
+                <td data-label="Code" class="course-code">[CS-6xx]</td>
+                <td class="c-main"><span class="course-title">Data-centric AI</span><span class="course-desc">Labeling, data cleaning, augmentation, and dataset evaluation for ML systems.</span></td>
+                <td data-label="Semester">Spring 2026</td>
+                <td data-label="Level"><span class="tag">PG</span></td>
+                <td data-label="Syllabus"><a href="#">Syllabus</a></td>
+              </tr>
+              <tr>
+                <td data-label="Code" class="course-code">[CS-3xx]</td>
+                <td class="c-main"><span class="course-title">Artificial Intelligence</span><span class="course-desc">Search, planning, probabilistic reasoning, and an introduction to learning.</span></td>
+                <td data-label="Semester">[Semester Year] · FAST-NUCES</td>
+                <td data-label="Level"><span class="tag">UG</span></td>
+                <td data-label="Syllabus"><a href="#">Syllabus</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section class="section-alt" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Get in touch</span>
+          <h2 id="contact-title">Contact</h2>
+          <p class="lead">Students, collaborators, and organizations are all welcome. Email is the fastest way to reach me.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="reveal">
+            <ul class="contact-list">
+              <li>
+                <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span>
+                <div>
+                  <span class="lbl">Email</span>
+                  <div class="email-row">
+                    <a href="mailto:adeel.arif@ucp.edu.pk" id="email-address">adeel.arif@ucp.edu.pk</a>
+                    <button type="button" class="copy-btn" id="copy-email" aria-label="Copy email address"><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg><span>Copy</span></button>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span>
+                <div><span class="lbl">Office</span>[Room No.], Department of Computer Science<br>University of Central Punjab, 1-Khayaban-e-Jinnah Road, Johar Town, Lahore, Pakistan</div>
+              </li>
+              <li>
+                <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></span>
+                <div><span class="lbl">Office hours</span>[Mon &amp; Wed, 2:00 – 4:00 PM], or by appointment</div>
+              </li>
+              <li>
+                <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></span>
+                <div><span class="lbl">Phone (optional)</span><a href="tel:+920000000000">[+92 XXX XXXXXXX]</a></div>
+              </li>
+            </ul>
+            <ul class="profile-links" aria-label="Academic and social profiles">
+              <li><a href="https://scholar.google.com/citations?user=[ID]" target="_blank" rel="noopener" aria-label="Google Scholar"><svg class="icon" aria-hidden="true"><use href="#i-scholar"/></svg></a></li>
+              <li><a href="https://orcid.org/[0000-0000-0000-0000]" target="_blank" rel="noopener" aria-label="ORCID"><svg class="icon" aria-hidden="true"><use href="#i-orcid"/></svg></a></li>
+              <li><a href="https://www.linkedin.com/in/[handle]" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
+              <li><a href="https://www.researchgate.net/profile/[handle]" target="_blank" rel="noopener" aria-label="ResearchGate"><svg class="icon" aria-hidden="true"><use href="#i-researchgate"/></svg></a></li>
+              <li><a href="https://github.com/[handle]" target="_blank" rel="noopener" aria-label="GitHub"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a></li>
+            </ul>
+          </div>
+
+          <!-- Contact form: opens the visitor's email app via mailto (no backend). -->
+          <form class="card form reveal" id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="field">
+                <label for="cf-name">Name</label>
+                <input id="cf-name" name="name" type="text" autocomplete="name" required aria-required="true">
+              </div>
+              <div class="field">
+                <label for="cf-email">Email</label>
+                <input id="cf-email" name="email" type="email" autocomplete="email" required aria-required="true">
+              </div>
+            </div>
+            <div class="field">
+              <label for="cf-subject">Subject</label>
+              <select id="cf-subject" name="subject" required aria-required="true">
+                <option value="Student Inquiry">Student Inquiry</option>
+                <option value="Prospective Student">Prospective Student</option>
+                <option value="Research Collaboration">Research Collaboration</option>
+                <option value="Consulting & Training">Consulting &amp; Training</option>
+                <option value="Media">Media</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="cf-message">Message</label>
+              <textarea id="cf-message" name="message" required aria-required="true"></textarea>
+            </div>
+            <div>
+              <button class="btn btn-primary" type="submit"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg> Send message</button>
+            </div>
+            <p class="form-note">This opens your email app with the message filled in. Nothing is stored on this site.</p>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
         </div>
       </div>
     </section>
   </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h2>Dr. Adeel Arif</h2>
+          <p>Assistant Professor of Computer Science<br>University of Central Punjab, Lahore</p>
+          <p style="font-size:.9rem;"><strong style="color:#fff;">Prospective students:</strong> I'm always looking for motivated students. See <a href="#join-title">Join LahoriBot</a> for how to reach me.</p>
+        </div>
+        <nav aria-label="Footer">
+          <h3>Quick links</h3>
+          <ul class="footer-links">
+            <li><a href="#updates">Updates</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h3>Profiles</h3>
+          <ul class="profile-links">
+            <li><a href="https://scholar.google.com/citations?user=[ID]" target="_blank" rel="noopener" aria-label="Google Scholar"><svg class="icon" aria-hidden="true"><use href="#i-scholar"/></svg></a></li>
+            <li><a href="https://orcid.org/[0000-0000-0000-0000]" target="_blank" rel="noopener" aria-label="ORCID"><svg class="icon" aria-hidden="true"><use href="#i-orcid"/></svg></a></li>
+            <li><a href="https://www.linkedin.com/in/[handle]" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
+            <li><a href="https://github.com/[handle]" target="_blank" rel="noopener" aria-label="GitHub"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span id="year">2026</span> Adeel Arif. All rights reserved.</span>
+        <span>Last updated: November 2026</span> <!-- Update manually when you edit content -->
+      </div>
+    </div>
+  </footer>
+
+  <button class="to-top" id="to-top" type="button" aria-label="Back to top"><svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg></button>
+
+  <!-- ===== SCRIPTS ===== -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const mobileToggle = document.querySelector('.mobile-menu-toggle');
-      const mainNav = document.querySelector('.main-nav');
-      
-      mobileToggle.addEventListener('click', function() {
-        mainNav.classList.toggle('nav-open');
-        mobileToggle.classList.toggle('active');
+    (function () {
+      var CONTACT_EMAIL = 'adeel.arif@ucp.edu.pk'; // used by the contact form
+
+      // Footer year
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // ----- Mobile menu -----
+      var toggle = document.querySelector('.nav-toggle');
+      var menu = document.getElementById('nav-links');
+      function setMenu(open) {
+        menu.classList.toggle('open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      }
+      toggle.addEventListener('click', function () { setMenu(menu.classList.contains('open') ? false : true); });
+      menu.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && menu.classList.contains('open')) { setMenu(false); toggle.focus(); }
       });
-      
-      // Close menu when clicking on a nav link (mobile)
-      const navLinks = document.querySelectorAll('.main-nav a');
-      navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-          if (window.innerWidth <= 768) {
-            mainNav.classList.remove('nav-open');
-            mobileToggle.classList.remove('active');
-          }
+      document.addEventListener('click', function (e) {
+        if (menu.classList.contains('open') && !e.target.closest('.site-header')) setMenu(false);
+      });
+
+      // ----- Header shadow + back-to-top visibility -----
+      var header = document.querySelector('.site-header');
+      var toTop = document.getElementById('to-top');
+      function onScroll() {
+        var y = window.scrollY;
+        header.classList.toggle('scrolled', y > 8);
+        toTop.classList.toggle('show', y > 600);
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+      toTop.addEventListener('click', function () {
+        window.scrollTo({ top: 0 });
+        document.querySelector('.brand').focus({ preventScroll: true });
+      });
+
+      // ----- Active nav link highlighting -----
+      var navLinks = Array.prototype.slice.call(menu.querySelectorAll('a'));
+      var sections = navLinks.map(function (a) { return document.querySelector(a.getAttribute('href')); }).filter(Boolean);
+      function updateActive() {
+        var line = window.innerHeight * 0.35;
+        var current = null;
+        sections.forEach(function (s) { if (s.getBoundingClientRect().top <= line) current = s; });
+        navLinks.forEach(function (a) {
+          var on = current && a.getAttribute('href') === '#' + current.id;
+          a.classList.toggle('active', !!on);
+          if (on) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
         });
+      }
+      window.addEventListener('scroll', updateActive, { passive: true });
+      window.addEventListener('resize', updateActive);
+      updateActive();
+
+      // ----- Fade-in on scroll -----
+      var reveals = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) {
+            if (en.isIntersecting) { en.target.classList.add('visible'); io.unobserve(en.target); }
+          });
+        }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+        reveals.forEach(function (el) { io.observe(el); });
+      } else {
+        reveals.forEach(function (el) { el.classList.add('visible'); });
+      }
+
+      // ----- Copy email -----
+      var copyBtn = document.getElementById('copy-email');
+      copyBtn.addEventListener('click', function () {
+        var label = copyBtn.querySelector('span');
+        function done() {
+          copyBtn.classList.add('copied'); label.textContent = 'Copied';
+          setTimeout(function () { copyBtn.classList.remove('copied'); label.textContent = 'Copy'; }, 2000);
+        }
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(CONTACT_EMAIL).then(done, fallback);
+        } else { fallback(); }
+        function fallback() {
+          var t = document.createElement('textarea');
+          t.value = CONTACT_EMAIL; t.setAttribute('readonly', ''); t.style.position = 'fixed'; t.style.opacity = '0';
+          document.body.appendChild(t); t.select();
+          try { document.execCommand('copy'); done(); } catch (err) { label.textContent = 'Press Ctrl+C'; }
+          document.body.removeChild(t);
+        }
       });
-    });
+
+      // ----- Contact form → mailto -----
+      var form = document.getElementById('contact-form');
+      var status = document.getElementById('form-status');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var fName = document.getElementById('cf-name');
+        var fEmail = document.getElementById('cf-email');
+        var fMsg = document.getElementById('cf-message');
+        var name = fName.value.trim();
+        var email = fEmail.value.trim();
+        var subject = document.getElementById('cf-subject').value;
+        var message = fMsg.value.trim();
+        var firstInvalid = null;
+        [fName, fEmail, fMsg].forEach(function (f) {
+          var bad = !f.value.trim() || (f.type === 'email' && !f.checkValidity());
+          f.setAttribute('aria-invalid', bad ? 'true' : 'false');
+          if (bad && !firstInvalid) firstInvalid = f;
+        });
+        if (firstInvalid) {
+          status.style.color = '#a3261b';
+          status.textContent = 'Please fill in your name, a valid email, and a message.';
+          firstInvalid.focus();
+          return;
+        }
+        var body = message + '\n\n—\n' + name + '\n' + email;
+        var href = 'mailto:' + CONTACT_EMAIL +
+          '?subject=' + encodeURIComponent('[' + subject + '] ' + name) +
+          '&body=' + encodeURIComponent(body);
+        status.style.color = '';
+        status.textContent = 'Opening your email app…';
+        window.location.href = href;
+      });
+    })();
   </script>
 </body>
-</html> 
+</html>
